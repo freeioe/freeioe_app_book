@@ -12,4 +12,5 @@
   * [OpcUA采集示例](examples/opcuacollect.md)
   * [OpcUA服务示例](examples/opcuaserver.md)
   * [MQTT示例](examples/mqtt.md)
+* [APP开发引导](app_dev_guide.md)
 
