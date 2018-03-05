@@ -7,4 +7,5 @@
   * [系统接口](app/sys.md)
   * [统计接口](app/stat.md)
   * [日志接口](app/logger.md)
+* [应用示例](examples/README.md)
 
