@@ -1,5 +1,4 @@
-#Application common API interfaces
-
+# Application common API interfaces
 
 [API](/app/api.md)
 
