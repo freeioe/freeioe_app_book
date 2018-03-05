@@ -9,4 +9,5 @@
   * [日志接口](app/logger.md)
 * [应用示例](examples/README.md)
   * [Modbus示例](examples/modbus.md)
+  * [OpcUA采集示例](examples/opcuacollect.md)
 
