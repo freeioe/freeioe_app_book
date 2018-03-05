@@ -15,20 +15,20 @@
   ],
   "pluginsConfig": {
     "disqus": {
-      "shortName": "webpack-handbook"
+      "shortName": "iot_app_api_book"
     },
     "github": {
-      "url": "https://github.com/zhaoda/webpack-handbook"
+      "url": "https://github.com/srdgame/iot_app_api_book"
     },
     "editlink": {
-      "base": "https://github.com/zhaoda/webpack-handbook/blob/master/content",
+      "base": "https://github.com/srdgame/iot_app_api_book/blob/master/content",
       "label": "编辑本页"
     },
     "baidu": {
-        "token": "a9787f0ab45d5e237bab522431d0a7ec"
+        "token": "xxxxx"
     },
     "sitemap": {
-        "hostname": "http://zhaoda.net/"
+        "hostname": "http://symgrid.com/"
     }
   }
 }
