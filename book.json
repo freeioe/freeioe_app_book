@@ -5,13 +5,6 @@
   "plugins": [
     "github",
     "github-buttons",
-    "editlink",
-    "prism",
-    "-highlight",
-    "baidu",
-    "splitter",
-    "sitemap",
-    "ace",
   ],
   "pluginsConfig": {
     "github": {
@@ -29,16 +22,6 @@
         "width": "230",
         "count": false
       }]
-    }
-    "editlink": {
-      "base": "https://github.com/srdgame/iot_app_api_book/blob/master/content",
-      "label": "编辑本页"
-    },
-    "baidu": {
-        "token": "xxxxx"
-    },
-    "sitemap": {
-        "hostname": "http://symgrid.com/"
     }
   }
 }
