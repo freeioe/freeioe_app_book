@@ -4,6 +4,7 @@
   "language": "zh",
   "plugins": [
     "github",
+    "github-buttons",
     "editlink",
     "prism",
     "-highlight",
