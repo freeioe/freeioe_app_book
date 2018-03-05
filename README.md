@@ -1,8 +1,4 @@
-\#Summary
-
 # IOT Application API
-
-
 
 
 
