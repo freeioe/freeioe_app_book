@@ -17,6 +17,19 @@
     "github": {
       "url": "https://github.com/srdgame/iot_app_api_book"
     },
+    "github-buttons": {
+      "buttons": [{
+        "user": "srdgame",
+        "repo": "iot_app_api_book",
+        "type": "star",
+        "size": "large"
+      }, {
+        "user": "srdgame",
+        "type": "follow",
+        "width": "230",
+        "count": false
+      }]
+    }
     "editlink": {
       "base": "https://github.com/srdgame/iot_app_api_book/blob/master/content",
       "label": "编辑本页"
