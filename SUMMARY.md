@@ -14,4 +14,5 @@
   * [MQTT示例](examples/mqtt.md)
 * [APP开发引导](app_dev_guide.md)
   * [二进制数据操作](app_dev_guide/er-jin-zhi-shu-ju-cao-zuo.md)
+  * [文件操作](app_dev_guide/wen-jian-cao-zuo.md)
 
