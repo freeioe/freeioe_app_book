@@ -2,7 +2,7 @@
 
 ## 设备数据采集
 
-1. [Modbus示例](/examples/modbus.md)
+1. [Modbus示例](examples/modbus.md)
 
 
 
