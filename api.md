@@ -1,2 +1,6 @@
-[app/api.md](/app/api.md)
+[API](/app/api.md)
+[SYS](/app/sys.md)
+[DEVICE](/app/device.md)
+[STAT](/app/stat.md)
+[LOGGER](/app/logger.md)
 
