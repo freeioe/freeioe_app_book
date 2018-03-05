@@ -15,4 +15,5 @@
 * [APP开发引导](app_dev_guide.md)
   * [二进制数据操作](app_dev_guide/er-jin-zhi-shu-ju-cao-zuo.md)
   * [文件操作](app_dev_guide/wen-jian-cao-zuo.md)
+  * [内置模块](app_dev_guide/nei-zhi-mo-kuai.md)
 
