@@ -3,7 +3,6 @@
   "description": "IOT应用开发接口使用说明。",
   "language": "zh",
   "plugins": [
-    "disqus",
     "github",
     "editlink",
     "prism",
@@ -14,9 +13,6 @@
     "ace",
   ],
   "pluginsConfig": {
-    "disqus": {
-      "shortName": "iot_app_api_book"
-    },
     "github": {
       "url": "https://github.com/srdgame/iot_app_api_book"
     },
