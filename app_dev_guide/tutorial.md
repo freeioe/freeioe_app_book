@@ -12,7 +12,7 @@ Learning Lua: [http://lua-users.org/wiki/LearningLua](http://lua-users.org/wiki/
  │   ├── app.lua — App入口Lua文件  
  │   ├── conf.lua — App自定义模块文件  
  │   └── luaclib — App自定义的C模块目录  
- │   └── opcua.so — App自定义的OpcUA模块（C语言模块）
+ │            └── opcua.so — App自定义的OpcUA模块（C语言模块）
 
 APP应用的入口是一个符合IOT框架接口定义的特定Lua模块文件
 
