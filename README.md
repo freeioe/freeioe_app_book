@@ -1,5 +1,12 @@
 # IOT应用开发指南
 
+## 应用开发引导
+
+* [开发指南](/app_dev_guide/tutorial.md)
+* [二进制数据操作](/app_dev_guide/er-jin-zhi-shu-ju-cao-zuo.md)
+* [文件操作](/app_dev_guide/wen-jian-cao-zuo.md)
+* [内置模块](/app_dev_guide/nei-zhi-mo-kuai.md)
+
 ## 应用接口文档
 
 平台为应用开发者提供了一系列的接口，方便用户开发基于IOT平台的设备应用。 包括：
@@ -18,12 +25,6 @@
 * [OpcUA采集示例](/examples/opcuacollect.md)
 * [OpcUA服务示例](/examples/opcuaserver.md)
 * [MQTT示例](/examples/mqtt.md)
-
-## APP开发引导
-
-* [二进制数据操作](/app_dev_guide/er-jin-zhi-shu-ju-cao-zuo.md)
-* [文件操作](/app_dev_guide/wen-jian-cao-zuo.md)
-* [内置模块](/app_dev_guide/nei-zhi-mo-kuai.md)
 
 
 
