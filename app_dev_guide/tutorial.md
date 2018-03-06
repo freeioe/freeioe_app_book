@@ -1,3 +1,6 @@
+
+---
+
 ## Lua学习
 
 Learning Lua: [http://lua-users.org/wiki/LearningLua](http://lua-users.org/wiki/LearningLua)  
