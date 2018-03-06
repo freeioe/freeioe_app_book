@@ -6,19 +6,19 @@
 ## 应用开发引导
 
 * [开发指南](/app_dev_guide/tutorial.md)
-* [二进制数据操作](/app_dev_guide/er-jin-zhi-shu-ju-cao-zuo.md)
-* [文件操作](/app_dev_guide/wen-jian-cao-zuo.md)
-* [内置模块](/app_dev_guide/nei-zhi-mo-kuai.md)
+* [二进制数据操作](/app_dev_guide/binary.md)
+* [文件操作](/app_dev_guide/file.md)
+* [内置模块](/app_dev_guide/modules.md)
 
 ## 应用接口文档
 
 平台为应用开发者提供了一系列的接口，方便用户开发基于IOT平台的设备应用。 包括：
 
-* [基础接口](app/api.md)
-* [设备对象](app/device.md)
-* [系统接口](app/sys.md)
-* [统计接口](app/stat.md)
-* [日志接口](app/logger.md)
+* [基础接口](/app/api.md)
+* [设备对象](/app/device.md)
+* [系统接口](/app/sys.md)
+* [统计接口](/app/stat.md)
+* [日志接口](/app/logger.md)
 
 ## 应用示例
 
