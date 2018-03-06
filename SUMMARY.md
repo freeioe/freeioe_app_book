@@ -1,6 +1,11 @@
 # Summary
 
 * [Introduction](README.md)
+* [应用开发](app_dev_guide/readme.md)
+  * [开发指南](app_dev_guide/tutorial.md)
+  * [二进制数据操作](app_dev_guide/er-jin-zhi-shu-ju-cao-zuo.md)
+  * [文件操作](app_dev_guide/wen-jian-cao-zuo.md)
+  * [内置模块](app_dev_guide/nei-zhi-mo-kuai.md)
 * [应用接口](app.md)
   * [基础接口](app/api.md)
   * [设备对象](app/device.md)
@@ -12,8 +17,4 @@
   * [OpcUA采集示例](examples/opcuacollect.md)
   * [OpcUA服务示例](examples/opcuaserver.md)
   * [MQTT示例](examples/mqtt.md)
-* [APP开发引导](app_dev_guide.md)
-  * [二进制数据操作](app_dev_guide/er-jin-zhi-shu-ju-cao-zuo.md)
-  * [文件操作](app_dev_guide/wen-jian-cao-zuo.md)
-  * [内置模块](app_dev_guide/nei-zhi-mo-kuai.md)
 
