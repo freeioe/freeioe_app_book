@@ -3,9 +3,15 @@
 
 ## Lua学习
 
-Learning Lua: [http://lua-users.org/wiki/LearningLua](http://lua-users.org/wiki/LearningLua)  
- Sample Code: [http://lua-users.org/wiki/SampleCode](http://lua-users.org/wiki/SampleCode)  
- Module Tutorial: [http://lua-users.org/wiki/ModulesTutorial](http://lua-users.org/wiki/ModulesTutorial)
+Lua用户手册： [中文 ](http://cloudwu.github.io/lua53doc/ "中文")  [英文](http://www.lua.org/manual/5.3/manual.html "英文")
+
+Lua程序设计（在线版本，第一版，Lua5.1）： [中文 ](http://book.luaer.cn/) [英文](http://www.lua.org/pil/contents.html) 
+
+Lua users在线资料：
+
+1.  Learning Lua: [http://lua-users.org/wiki/LearningLua](http://lua-users.org/wiki/LearningLua)
+2.  Sample Code: [http://lua-users.org/wiki/SampleCode](http://lua-users.org/wiki/SampleCode)
+3.  Module Tutorial: [http://lua-users.org/wiki/ModulesTutorial](http://lua-users.org/wiki/ModulesTutorial)
 
 ## APP组成
 
