@@ -9,6 +9,13 @@
 * [应用简要](/guide/onestep.md)
 * [应用示例](/guide/example.md)
 
+## [开发环境搭建](/dev_setup/README.md)
+
+  * [虚拟机开发环境](/dev_setup/vbox.md)
+  * [Linux原生开发环境](/dev_setup/linux.md)
+  * [应用中心在线开发](/dev_setup/app_center.md)
+  * [设备Web在线开发](/dev_setup/dev_web.md)
+
 ## 应用接口文档
 
 平台为应用开发者提供了一系列的接口，方便用户开发基于IOT平台的设备应用。
