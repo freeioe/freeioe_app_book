@@ -7,6 +7,7 @@
 
 * [开发指南](/app_dev_guide/tutorial.md)
 * [应用简要](//app_dev_guide/onestep.md)
+* [应用示例](/app_dev_guide/example.md)
 * [二进制数据操作](/app_dev_guide/binary.md)
 * [文件操作](/app_dev_guide/file.md)
 * [内置模块](/app_dev_guide/modules.md)
