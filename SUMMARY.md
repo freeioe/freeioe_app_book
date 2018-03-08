@@ -5,9 +5,6 @@
   * [开发指南](/app_dev_guide/tutorial.md)
   * [应用简要](/app_dev_guide/onestep.md)
   * [应用示例](app_dev_guide/example.md)
-  * [二进制数据操作](/app_dev_guide/binary.md)
-  * [文件操作](/app_dev_guide/file.md)
-  * [内置模块](/app_dev_guide/modules.md)
 * [应用接口](/app/README.md)
   * [基础接口](/app/api.md)
   * [设备对象](/app/device.md)
@@ -19,4 +16,8 @@
   * [OpcUA采集示例](/examples/opcuacollect.md)
   * [OpcUA服务示例](/examples/opcuaserver.md)
   * [MQTT示例](/examples/mqtt.md)
+* [其它](other/README.md)
+* [二进制数据操作](/app_dev_guide/binary.md)
+* [文件操作](/app_dev_guide/file.md)
+* [内置模块](/app_dev_guide/modules.md)
 
