@@ -1,14 +1,14 @@
-# 应用开发接口（DEVICE部分） #
+# 应用开发接口（DEVICE部分）
 
-* device:cleanup()
+* device:cleanup\(\)
 
 设备清理接口。
 
-* device:mod(inputs, outputs, commands)
+* device:mod\(inputs, outputs, commands\)
 
-修改设备描述项。 参考api:create_device
+修改设备描述项。 参考api:create\_device
 
-* device:get_input_prop(input, prop)
+* device:get\_input\_prop\(input, prop\)
 
 获取设备输入项的当前值。
 
@@ -16,7 +16,7 @@ input: 输入项
 
 prop: 输入项属性
 
-* device:set_input_prop(input, prop, value, timestamp, quality)
+* device:set\_input\_prop\(input, prop, value, timestamp, quality\)
 
 写入设备输入项属性值。
 
@@ -29,30 +29,36 @@ value: 数据
 timestamp: 时间戳。 默认为当前时间
 
 quality: 质量戳。默认为0
+
 ```
 dev:set_input_prop("Temperature", "value", 10)
 ```
 
-* device:get_output_prop(output, prop)
+* device:get\_output\_prop\(output, prop\)
 
 获取设备输出项当前输出数据
 
-* device:set_output_prop(output, prop, value)
+* device:set\_output\_prop\(output, prop, value\)
 
 写入输出项数据
 
-* device:send_command(command, param)
+* device:send\_command\(command, param\)
 
 发送设备控制指令
 
-* device:list_props()
+* device:list\_props\(\)
 
 获取设备属性，包含inputs, outputs, commands
 
-* device:dump_comm(dir, ...)
+* device:dump\_comm\(dir, ...\)
 
-记录设备报文。 参考sys:dump_comm
+记录设备报文。 参考sys:dump\_comm
 
-* device:stat(name)
+* device:fire\_event\(dir, ...\)
+
+记录设备事件。 参考sys:fire\_event
+
+* device:stat\(name\)
 
 获取数据统计对象。参考app:stat
+
