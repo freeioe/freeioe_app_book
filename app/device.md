@@ -54,7 +54,7 @@ dev:set_input_prop("Temperature", "value", 10)
 
 记录设备报文。 参考sys:dump\_comm
 
-* device:fire\_event\(dir, ...\)
+* device:fire\_event\(level, type, info, data, timestamp\)
 
 记录设备事件。 参考sys:fire\_event
 
