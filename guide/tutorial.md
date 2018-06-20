@@ -15,7 +15,7 @@ Lua users在线资料：
 
 ## APP组成
 
-本章介绍如何使用Lua\(5.3\)语言开发IOT应用，在开始阅读本章前，请先熟悉Lua中模块的概念以及如何构建简单的Lua模块。  
+本章介绍如何使用Lua\(5.3\)语言开发FreeIOE应用，在开始阅读本章前，请先熟悉Lua中模块的概念以及如何构建简单的Lua模块。  
  一个经典的APP会有如下的结构：  
  ├── opcua\_client — App目录  
  │   ├── app.lua — App入口Lua文件  
@@ -23,7 +23,7 @@ Lua users在线资料：
  │   └── luaclib — App自定义的C模块目录  
  │        └── opcua.so — App自定义的OpcUA模块（C语言模块）
 
-APP应用的入口是一个符合IOT框架接口定义的特定Lua模块文件
+APP应用的入口是一个符合FreeIOE框架接口定义的特定Lua模块文件
 
 ## 开发环境
 

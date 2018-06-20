@@ -232,7 +232,7 @@ function app:run(tms)
 	--- OPCUA模块运行入口
 	while self._server.running do
 		local ms = self._server:run_once(false)
-		--- 暂停OPCUA模块运行，处理IOT系统消息
+		--- 暂停OPCUA模块运行，处理FreeIOE系统消息
 		self._sys:sleep(ms % 10)
 	end
 	print('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
