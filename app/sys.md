@@ -17,7 +17,11 @@ log:debug("this is a log content")
 
 * sys:dump_comm(sn, dir, ...)
 
-记录应用报文。 sn是应用创建的设备序列号，参考api:create_device()函数。 dir是报文方向： IN, OUT。
+记录应用报文。 sn是应用创建的设备序列号/为空时代表设备无关报文。参考api:create_device()函数。 dir是报文方向： IN, OUT。
+
+* sys:fire_event(sn, level, type, info, data, timestamp)
+
+记录应用事件。 sn是应用创建的设备序列号。level是事件等级的整数,type是事件类型(如果是字符串类型则是自定义类型),info是事件描述字符串,data是时间附带数据,timestamp是时间戳。
 
 * sys:fork(func, ...)
 
@@ -47,7 +51,7 @@ timer_cancel()
 
 * sys:abort()
 
-系统退出接口，调用此接口会导致IOT系统退出。 请谨慎调用。 
+系统退出接口，调用此接口会导致FreeIOE系统退出。 请谨慎调用。 
 
 * sys:now()
 
@@ -109,9 +113,13 @@ timer_cancel()
 
 生成独立的设备序列号，dev_name为设备名称，必须指定。
 
+* sys:hw_id()
+
+获取FreeIOE设备序列号
+
 * sys:id()
 
-获取IOT设备学列号
+获取FreeIOE连接云平台所用的序列号(此ID可不同与设备序列号)
 
 * sys:cleanup()
 

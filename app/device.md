@@ -53,6 +53,10 @@ dev:set_input_prop("Temperature", "value", 10)
 
 记录设备报文。 参考sys:dump_comm
 
+* device:fire_event(level, type, info, data, timestamp)
+
+记录应用事件。 参考sys:fire_event
+
 * device:stat(name)
 
 获取数据统计对象。参考app:stat
