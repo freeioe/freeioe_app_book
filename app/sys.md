@@ -23,15 +23,7 @@ log:debug("this is a log content")
 
 * sys:fire\_event\(sn, level, type, info, data, timestamp\)
 
-<<<<<<< HEAD
-记录应用报文。 sn是应用创建的设备序列号/为空时代表设备无关报文。参考api:create_device()函数。 dir是报文方向： IN, OUT。
-
-* sys:fire_event(sn, level, type, info, data, timestamp)
-
-记录应用事件。 sn是应用创建的设备序列号。level是事件等级的整数,type是事件类型(如果是字符串类型则是自定义类型),info是事件描述字符串,data是时间附带数据,timestamp是时间戳。
-=======
 记录应用事件。 sn是应用创建的设备序列号。level是事件等级的整数,type是事件类型\(如果是字符串类型则是自定义类型\),info是事件描述字符串,data是时间附带数据,timestamp是时间戳。
->>>>>>> 1d33ae5b816d808131b46ae72402713244eb6144
 
 * sys:fork\(func, ...\)
 
@@ -64,11 +56,7 @@ timer_cancel()
 
 * sys:abort\(\)
 
-<<<<<<< HEAD
 系统退出接口，调用此接口会导致FreeIOE系统退出。 请谨慎调用。 
-=======
-系统退出接口，调用此接口会导致IOT系统退出。 请谨慎调用。
->>>>>>> 1d33ae5b816d808131b46ae72402713244eb6144
 
 * sys:now\(\)
 
