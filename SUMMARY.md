@@ -11,6 +11,7 @@
   * [Linux原生开发环境](/dev_setup/linux.md)
   * [应用中心在线开发](/dev_setup/app_center.md)
   * [设备Web在线开发](/dev_setup/dev_web.md)
+  * [使用VSCode插件开发](dev_setup/vscode-extension.md)
 * [应用接口](/app/README.md)
   * [基础接口](/app/api.md)
   * [设备对象](/app/device.md)
