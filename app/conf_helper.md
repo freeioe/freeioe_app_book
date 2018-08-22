@@ -30,34 +30,48 @@ devices\_node - 应用配置数据中设备列表节点名称。默认为devs
 
 使用代码示例：
 ``` lua
-	local conf = self._conf or {}
-	local conf_api = self._sys:conf_api(conf.cnf or 'CNF000000001', 'cnf', 'tpl')
+	local config = self._conf or {}
+	--[[
+	config.devs = config.devs or {
+		{ unit = 1, name = 'bms01', sn = 'xxx-xx-1', tpl = 'bms' },
+		{ unit = 2, name = 'bms02', sn = 'xxx-xx-2', tpl = 'bms2' }
+	}
+	]]--
 
-	local config_str, err = conf_api:data(conf.version or 1)
-	if not config_str then
-		self._log:warning("DLT645 conf loading failure", err)
+	--- 获取云配置
+	if not config.devs or config.cnf then
+		if not config.cnf then
+			config = 'CNF000000002.1' -- loading cloud configuration CNF000000002 version 1
+		else
+			config = config.cnf .. '.' .. config.ver
+		end
 	end
 
-	local config = cjson.decode(config_str or "") or {}
-
-	config.opt = config.opt or {
-		--port = "/dev/ttymxc1",
-		port = "/tmp/ttyS10",
-		baudrate = 9600
-	}
-
-	config.tpls = config.tpls or {
-		{ id = "TPL000000001", name = "S1", ver = 1 },
-		{ id = "TPL000000001", name = "S2", ver = 1 }
-	}
-
-	config.devs = config.devs or {
-		{ addr = 992233445566, name = 's1', sn = 'xxx-xx-1', tpl = 'S1' },
-		{ addr = 990000000001, name = 's2', sn = 'xxx-xx-2', tpl = 'S2' },
-	}
 	local helper = conf_helper:new(self._sys, config)
 	helper:fetch()
 
+	self._devs = {}
+	for _, v in ipairs(helper:devices()) do
+		-- initialize your devices
+	end
+
+	--- 获取配置
+	local conf = helper:config()
+	conf.channel_type = config.channel_type or 'socket'
+	if conf.channel_type == 'socket' then
+		conf.opt = conf.opt or {
+			host = "127.0.0.1",
+			port = 1503,
+			nodelay = true
+		}
+	else
+		conf.opt = conf.opt or {
+			port = "/dev/ttymxc1",
+			baudrate = 115200
+		}
+	end
+	if conf.channel_type == 'socket' then
+		client = sm_client(socketchannel, conf.opt, modbus.apdu_tcp, 1)
 ```
 
 获取完成后文件目录：
