@@ -26,6 +26,8 @@
 * [统计接口](/app/stat.md)
 * [日志接口](/app/logger.md)
 * [事件类型和等级](/app/event.md)
+* [云配置接口](/app/conf_api.md)
+* [云配置帮助接口](/app/conf_helper.md)
 
 ## 应用示例
 

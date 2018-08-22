@@ -110,6 +110,10 @@ timer_cancel()
 
 设定应用配置
 
+* sys:conf\_api\(conf\_name, ext, dir\)
+
+获取云配置服务接口。 具体参考app:conf\_api
+
 * sys:version\(\)
 
 获取应用版本号
@@ -118,7 +122,7 @@ timer_cancel()
 
 生成独立的设备序列号，dev\_name为设备名称，必须指定。
 
-* sys:hw_id()
+* sys:hw\_id()
 
 获取FreeIOE设备序列号
 
