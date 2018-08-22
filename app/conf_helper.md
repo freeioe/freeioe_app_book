@@ -6,11 +6,15 @@
 
 构造函数。参数:
 sys\_api - 应用系统接口 app.sys
-conf - 应用配置数据 (table)
+conf - 应用配置数据 (table数据或者<CNF_NAME>.<VERSION>字符串)
 templates\_ext - 设备模板文件本地存储的扩展名。默认为csv
 templates\_dir - 设备模板文件本地存储的子目录名。 默认为tpl
 templates\_node - 应用配置数据中模板列表节点名称。默认为tpls。如果该节点为空，则不进行模板下载。
 devices\_node - 应用配置数据中设备列表节点名称。默认为devs
+
+注:
+1. 当conf为字符串时，helper会从云配置接口获取对应的配置文件，然后使用json格式解析后当作应用配置数据使用。
+2. 当conf字符串中不包含version时，如"CNF000000001"，helper会从云配置服务中获取最新版本进行下载
 
 * api:fetch\(async\)
 
