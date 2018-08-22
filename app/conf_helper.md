@@ -9,7 +9,7 @@ sys\_api - 应用系统接口 app.sys
 conf - 应用配置数据 (table)
 templates\_ext - 设备模板文件本地存储的扩展名。默认为csv
 templates\_dir - 设备模板文件本地存储的子目录名。 默认为tpl
-templates\_node - 应用配置数据中模板列表节点名称。默认为tpls
+templates\_node - 应用配置数据中模板列表节点名称。默认为tpls。如果该节点为空，则不进行模板下载。
 devices\_node - 应用配置数据中设备列表节点名称。默认为devs
 
 * api:fetch\(async\)
