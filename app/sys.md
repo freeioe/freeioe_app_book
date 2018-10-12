@@ -31,7 +31,7 @@ log:debug("this is a log content")
 
 ```
 sys:fork(function(a)
-    print(a)
+	print(a)
 end, 1)
 ```
 
@@ -52,7 +52,7 @@ timer_cancel()
 
 * sys:exit\(\)
 
-应用退出接口（特殊应用使用）
+应用退出接口。请谨慎使用。 
 
 * sys:abort\(\)
 
@@ -116,7 +116,12 @@ timer_cancel()
 
 * sys:version\(\)
 
-获取应用版本号
+获取应用版本号。返回应用ID和应用版本
+
+```
+local app_id, version = sys:version()
+print(app_id, version)
+```
 
 * sys:gen\_sn\(dev\_name\)
 
@@ -130,7 +135,16 @@ timer_cancel()
 
 获取FreeIOE连接云平台所用的序列号(此ID可不同与设备序列号)
 
+* sys:req\(msg, ...\)
+
+发送同步请求，相应函数为app.response或者app.on\_req\_<msg>函数
+
+* sys:post\(msg, ...\)
+
+发送异步请求，相应函数为app.accept或者app.on\_post\_<msg>函数
+
 * sys:cleanup\(\)
 
 应用清理接口
+
 
