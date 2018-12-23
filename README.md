@@ -5,24 +5,25 @@
 
 ## 基础
 
-* [介绍](/intro/intro.md)
-    * [关于FreeIOE](/intro/about.md)
-    * [名词解释](/intro/glossary.md)
+* [关于FreeIOE](/intro/freeioe.md)
+* [名词解释](/intro/glossary.md)
 
-## 应用开发引导
+## 开发环境搭建
+
+* [注册开发者账户](dev_setup/cloud_reg.md)
+* [虚拟机开发环境](/dev_setup/vbox.md)
+* [Linux原生开发环境](/dev_setup/linux.md)
+* [应用中心在线开发](/dev_setup/app_center.md)
+* [设备Web在线开发](/dev_setup/dev_web.md)
+* [使用VSCode插件开发](dev_setup/vscode-extension.md)
+
+## 开发引导
 
 * [开发指南](/guide/tutorial.md)
 * [应用简要](/guide/onestep.md)
 * [应用示例](/guide/example.md)
 
-## 开发环境搭建
-
-* [虚拟机开发环境](/dev_setup/vbox.md)
-* [Linux原生开发环境](/dev_setup/linux.md)
-* [应用中心在线开发](/dev_setup/app_center.md)
-* [设备Web在线开发](/dev_setup/dev_web.md)
-
-## 应用接口文档
+## 接口文档
 
 平台为应用开发者提供了一系列的接口，方便用户开发基于FreeIOE平台的设备应用。
 
@@ -50,6 +51,4 @@
 * [二进制数据操作](/other/binary.md)
 * [文件操作](/other/file.md)
 * [内置模块](/other/modules.md)
-
-
 

@@ -1,10 +1,9 @@
 # Summary
 
 * [Introduction](README.md)
-* [应用开发](/guide/README.md)
-  * [开发指南](/guide/tutorial.md)
-  * [应用简要](/guide/onestep.md)
-  * [应用示例](/guide/example.md)
+* [基础](/intro/README.md)
+  * [关于FreeIOE](/intro/freeioe.md)
+  * [名词解释](/intro/glossary.md)
 * [开发环境搭建](/dev_setup/README.md)
   * [注册开发者账户](dev_setup/cloud_reg.md)
   * [虚拟机开发环境](/dev_setup/vbox.md)
@@ -12,7 +11,11 @@
   * [应用中心在线开发](/dev_setup/app_center.md)
   * [设备Web在线开发](/dev_setup/dev_web.md)
   * [使用VSCode插件开发](dev_setup/vscode-extension.md)
-* [应用接口](/app/README.md)
+* [开发引导](/guide/README.md)
+  * [开发指南](/guide/tutorial.md)
+  * [应用简要](/guide/onestep.md)
+  * [应用示例](/guide/example.md)
+* [接口文档](/app/README.md)
   * [基础接口](/app/api.md)
   * [设备对象](/app/device.md)
   * [系统接口](/app/sys.md)
@@ -28,4 +31,3 @@
   * [二进制数据操作](/other/binary.md)
   * [文件操作](/other/file.md)
   * [内置模块](/other/modules.md)
-
