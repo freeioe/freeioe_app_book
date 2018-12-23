@@ -5,8 +5,8 @@
 
 ## 基础
 
-* [关于FreeIOE](/intro/freeioe.md)
-* [名词解释](/intro/glossary.md)
+* [关于FreeIOE](intro/freeioe.md)
+* [名词解释](intro/glossary.md)
 
 ## 开发环境搭建
 
