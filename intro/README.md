@@ -2,5 +2,6 @@
 ---
 
 # 介绍
-* [关于FreeIOE](about.md)
+
+* [FreeIOE是什么](freeioe.md)
 * [名词解释](glossary.md)
