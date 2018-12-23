@@ -3,6 +3,12 @@
 
 # FreeIOE应用开发指南
 
+## 基础
+
+* [介绍](/intro/intro.md)
+    * [关于FreeIOE](/intro/about.md)
+    * [名词解释](/intro/glossary.md)
+
 ## 应用开发引导
 
 * [开发指南](/guide/tutorial.md)
@@ -40,6 +46,7 @@
 
 ## 其它
 
+* [Lua语言学习](/other/learning_lua.md)
 * [二进制数据操作](/other/binary.md)
 * [文件操作](/other/file.md)
 * [内置模块](/other/modules.md)
