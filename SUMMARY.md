@@ -5,7 +5,7 @@
   * [FreeIOE是什么](intro/freeioe.md)
   * [名词解释](intro/glossary.md)
 * [开发环境搭建](/dev_setup/README.md)
-  * [注册开发者账户](dev_setup/cloud_reg.md)
+  * [注册开发者账户](dev_setup/account.md)
   * [虚拟机开发环境](/dev_setup/vbox.md)
   * [Linux原生开发环境](/dev_setup/linux.md)
   * [应用中心在线开发](/dev_setup/app_center.md)
