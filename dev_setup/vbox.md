@@ -22,14 +22,14 @@ FreeIOE提供基于[虚拟机镜像](http://vbox.freeioe.org)，此镜像包含X
 
 ### 导入虚拟机
 
-![import_ova_1](import_ova_1.png "导入虚拟机")
+![import_ova_1](asserts/import_ova_1.png "导入虚拟机")
 
-![import_ova_2](import_ova_2.png "导入虚拟机")
+![import_ova_2](asserts/import_ova_2.png "导入虚拟机")
 
 
 ### 运行虚拟机
 
-![vm_console](vm_console.png "导入虚拟机")
+![vm_console](asserts/vm_console.png "运行虚拟机")
 
 
 ## 2. 添加虚拟设备
@@ -48,7 +48,7 @@ FreeIOE提供基于[虚拟机镜像](http://vbox.freeioe.org)，此镜像包含X
 * 点击“重启”确保序列号生效
 
 
-![change_cloud_id](change_cloud_id.png "修改云ID")
+![change_cloud_id](asserts/change_cloud_id.png "修改云ID")
 
 
 ## 4. 开发应用
