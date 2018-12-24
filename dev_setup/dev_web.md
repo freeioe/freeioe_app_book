@@ -20,8 +20,16 @@ FreeIOE内嵌Web管理系统需要用户登录。登录信息:
 >
 > ***用户登录后,请更改admin用户密码，已确保安全性***
 
-## 3. TODO:
 
-Put Vedio here
+![用户登录页面](../assets/login.png "用户登录")
 
+
+## 3. 应用列表
+
+![应用列表页面](../assets/app_list.png "应用列表")
+
+
+## 4. 应用编辑
+
+![应用编辑页面](../assets/app_edit.png "应用编辑")
 
