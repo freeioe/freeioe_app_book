@@ -20,6 +20,18 @@ FreeIOE提供基于[虚拟机镜像](http://vbox.freeioe.org)，此镜像包含X
 * 等待虚拟机启动完毕
 
 
+### 导入虚拟机
+
+![import_ova_1](import_ova_1.png "导入虚拟机")
+
+![import_ova_2](import_ova_2.png "导入虚拟机")
+
+
+### 运行虚拟机
+
+![vm_console](vm_console.png "导入虚拟机")
+
+
 ## 2. 添加虚拟设备
 
 * 登录冬笋云平台
@@ -34,6 +46,9 @@ FreeIOE提供基于[虚拟机镜像](http://vbox.freeioe.org)，此镜像包含X
 > 虚拟机在其用户登录时有显示其获取的IP地址信息
 * 在“云ID”的位置输入从平台申请的虚拟设备序列号，并点击“修改”
 * 点击“重启”确保序列号生效
+
+
+![change_cloud_id](change_cloud_id.png "修改云ID")
 
 
 ## 4. 开发应用
