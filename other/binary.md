@@ -1,13 +1,22 @@
+
+---
+
 # 二进制数据操作
 
-构建和解析二进制数据有两种方式：
+Lua 构建和解析二进制数据有两种方式：
 
-#### 使用string.char, string.byte
+* 使用string.char, string.byte
+* 使用string.pack, string.unpack
 
-函数参考:  
-[http://www.lua.org/manual/5.3/manual.html\#pdf-string.byte](http://www.lua.org/manual/5.3/manual.html#pdf-string.byte)  
-[http://www.lua.org/manual/5.3/manual.html\#pdf-string.char](http://www.lua.org/manual/5.3/manual.html#pdf-string.char)  
- 示例：
+
+## 使用string.char, string.byte
+
+***函数参考:***
+* [string.byte](http://www.lua.org/manual/5.3/manual.html#pdf-string.byte)
+* [string.char](http://www.lua.org/manual/5.3/manual.html#pdf-string.char)
+
+
+***示例：***
 
 ```lua
 local toInt16  = function(val)
@@ -23,10 +32,13 @@ local fromInt16= function(data)
 end
 ```
 
-#### 使用string.pack, string.unpack
+## 使用string.pack, string.unpack
 
-函数参考:  
-[http://www.lua.org/manual/5.3/manual.html\#6.4.2](http://www.lua.org/manual/5.3/manual.html#6.4.2)
+***函数参考:***
+* [string.pack/unpack](http://www.lua.org/manual/5.3/manual.html#6.4.2)
+
+
+***示例：***
 
 ```lua
 local toInt16 = function(value)
@@ -37,5 +49,7 @@ local fromInt16 = function(data)
 end
 ```
 
-位操作请参考: [http://www.lua.org/manual/5.3/manual.html\#3.4.2](http://www.lua.org/manual/5.3/manual.html#3.4.2)
+# 位数据操作
+
+Lua 5.3 原生支持位操作。[参考](http://www.lua.org/manual/5.3/manual.html#3.4.2)
 

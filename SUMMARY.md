@@ -30,6 +30,7 @@
   * [OpcUA服务示例](examples/opcuaserver.md)
   * [MQTT示例](examples/mqtt.md)
 * [其它](other/README.md)
+  * [Lua语言学习](other/learning_lua.md)
   * [二进制数据操作](other/binary.md)
   * [文件操作](other/file.md)
   * [内置模块](other/modules.md)

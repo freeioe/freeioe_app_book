@@ -1,7 +1,7 @@
 
 ---
 
-## 其它
+# 其它
 
 * [Lua语言学习](learning_lua.md)
 * [二进制数据操作](binary.md)
