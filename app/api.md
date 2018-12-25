@@ -42,7 +42,7 @@ api:set_handler({
 
 #### api:add_device(sn, meta, inputs, outputs, commands)
 
-创建新的采集设备对象。返回设备对象实例（参考设备API)。
+创建新的采集设备对象。返回设备对象实例（参考[设备API](device.md))。
 
 * sn：设备序列号
 * meta: 设备Meta信息

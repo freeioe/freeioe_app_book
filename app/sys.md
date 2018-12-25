@@ -27,7 +27,7 @@ log:debug("this is a log content")
 
 #### sys:dump_comm(sn, dir, ...)
 
-记录应用报文。 sn是应用创建的设备序列号/为空时代表设备无关报文。参考api:create_device()函数。 dir是报文方向： IN, OUT。
+记录应用报文。 sn是应用创建的设备序列号/为空时代表设备无关报文。参考[api](api.md) 中的[create_device](api.md#apicreate_device)函数。 dir是报文方向： IN, OUT。
 
 
 #### sys:fire_event(sn, level, type, info, data, timestamp)
@@ -100,7 +100,7 @@ timer_cancel()
 
 #### sys:data_api()
 
-获取数据接口，参考app:api
+获取数据接口，参考[api](api.md)
 
 
 #### sys:self_co()
@@ -140,7 +140,7 @@ timer_cancel()
 
 #### sys:conf_api(conf_name, ext, dir)
 
-获取云配置服务接口。 具体参考app:conf_api
+获取云配置服务接口。 具体参考[conf_api](conf_api.md)
 
 
 #### sys:version()
