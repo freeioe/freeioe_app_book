@@ -27,7 +27,7 @@ log:debug("this is a log content")
 
 #### sys:dump_comm(sn, dir, ...)
 
-记录应用报文。 sn是应用创建的设备序列号/为空时代表设备无关报文。参考[api](api.md) 中的[create_device](api.md#apicreate_device)函数。 dir是报文方向： IN, OUT。
+记录应用报文。 sn是应用创建的设备序列号/为空时代表设备无关报文。参考[device](device.md) 中的[dump_comm](device.md#dump_comm)函数。 dir是报文方向： IN, OUT。
 
 
 #### sys:fire_event(sn, level, type, info, data, timestamp)
