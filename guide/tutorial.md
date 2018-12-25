@@ -224,6 +224,7 @@ dev:set_input_prop_emergency('Va', "value", math.tointeger(v), now, 0)
 
 ```lua
 	self._log:trace("read input registers done!")
+	self._log:trace("Got err:", err, "more", "log content", here)
 ```
 
 
@@ -232,11 +233,45 @@ dev:set_input_prop_emergency('Va', "value", math.tointeger(v), now, 0)
 
 ### 设备序列号
 
+如设备协议中并未提供设备的序列号读取方式、或者不想采用设备本身的序列号，则可以使用FreeIOE提供的序列号生成功能，生成序列号。参考：
+
+```lua
+local dev_sn = self._sys:gen_sn('S5500_#1')
+```
+
+如需更为简单的序列号方式，则可以使用网关序列号 + 应用示例名 + 设备序号:
+
+```lua
+local dev_sn = self._sys:id()..self._name..'#1'
+```
+
 
 ### 云配置
 
+云平台提供应用的云配置服务，可以存储应用配置、设备模板等文本信息。在应用中可以使用sys:conf_api来获取接口，从而从平台下载配置的内容。
 
-### 
+```lua
+local api = self._sys:conf_api('TPL000000001')
+local ver = api:version()
+
+local str = api:data(ver)
+
+-- If template is cjson format
+local conf = cjson.decode(str)
+
+-- If template is csv
+local conf = ftcsv.parse(str)
+```
+
+
+## 社区
+
+访问FreeIOE [应用开发](http://app.freeioe.org)
+
+
+## 应用参考
+
+FreeIOE 在Github上提供一些示例应用： [代码库](https://github.com/freeioe/freeioe_example_apps)
 
 
 

@@ -1,3 +1,13 @@
+----
+
+# OpcUA 数据采集应用示例
+
+* 使用了opcua的Lua模块: [open62541-lua](https://github.com/freeioe/open62541-lua)
+* 读取Simulation节点下所有数据项
+
+
+***代码:***
+
 ```lua
 --- 导入需求的模块
 local class = require 'middleclass'

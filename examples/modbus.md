@@ -1,3 +1,14 @@
+----
+
+# Modbus 应用示例
+
+* 此应用使用了一个Lua实现的modbus模块([modbus_lua](https://github.com/srdgame/lua-modbus))
+* 此应用使用SocketChannel和SerialChannel作为链路层
+* 更为详细的modbus数据采集可以参考: [modbus_example](https://github.com/freeioe/freeioe_example_apps/tree/master/modbus_lua)
+
+
+***代码:***
+
 ```lua
 local class = require 'middleclass'
 --- 导入需要的模块

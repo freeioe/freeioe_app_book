@@ -1,3 +1,12 @@
+----
+
+# MQTT 数据上送应用示例
+
+* 此应用使用lua-mosquitto模块([lua-mosquitto](https://github.com/kooiot/lua-mosquitto))
+
+
+***代码:***
+
 ```lua
 
 local class = require 'middleclass'
@@ -35,7 +44,7 @@ function app:initialize(name, sys, conf)
 
 	self._mqtt_id = conf.mqtt_it or sys:id() -- using system iot id
 	self._username = conf.username or "symlinkdemo/demo"
-	self._password = conf.password or "qWZ/lxXqz2W33NZir6MW13RpCPAFELSiirVvGDfaaQw="
+	self._password = conf.password or "q1Z/lxXqz2W33NZir6MW13RpCPAFELSiirVvGDfaaQw="
 	self._mqtt_host = conf.server or "symlinkdemo.mqtt.iot.bj.baidubce.com"
 	self._mqtt_port = conf.port or "1883"
 	self._enable_tls = conf.enable_tls or false

@@ -1,3 +1,14 @@
+----
+
+# 提供OpcUA 数据服务应用示例
+
+* 使用了opcua的Lua模块: [open62541-lua](https://github.com/freeioe/open62541-lua)
+* 作为OPCUA服务器
+* 发布所有设备的数据项
+
+
+***代码:***
+
 ```lua
 local class = require 'middleclass'
 local opcua = require 'opcua'
