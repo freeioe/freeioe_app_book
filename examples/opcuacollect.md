@@ -20,9 +20,9 @@ app.API_VER = 1
 
 ---
 -- 应用对象初始化函数
--- @param name: 应用本地安装名称。 如modbus_com_1
--- @param sys: 系统sys接口对象。参考API文档中的sys接口说明
--- @param conf: 应用配置参数。由安装配置中的json数据转换出来的数据对象
+-- @param name 应用本地安装名称。 如modbus_com_1
+-- @param sys 系统sys接口对象。参考API文档中的sys接口说明
+-- @param conf 应用配置参数。由安装配置中的json数据转换出来的数据对象
 function app:initialize(name, sys, conf)
     self._name = name
     self._sys = sys
