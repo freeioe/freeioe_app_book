@@ -7,7 +7,8 @@
 本接口为采集类应用封装了从云配置服务中加载设备模板的逻辑。帮助用户快速使用云配置服务。
 
 
-#### helper:initialize(sys_api, conf, templates_ext, templates_dir, templates_node, devices_node)
+### initialize
+> function helper:initialize(sys_api, conf, templates_ext, templates_dir, templates_node, devices_node)
 
 构造函数。参数:
 
@@ -25,22 +26,25 @@
 >
 
 
-#### api:fetch(async)
+### fetch
+> function api:fetch(async)
 
 获取所有设备模板数据文件。async为true时将开启异步获取模式。
 
 
-#### api:templates()
+### templates
+> function api:templates()
 
 获取已经完成获取的模板列表
 
 
-#### api:devices()
+### devices
+> function api:devices()
 
 获取已经完成设备模板的设备列表
 
 
-#### 使用代码示例：
+### 使用代码示例：
 
 代码:
 

@@ -6,12 +6,8 @@
 FreeIOE框架为每个应用创建的服务接口，用以帮助应用快速构建设备模型等操作
 
 
-#### api:cleanup()
-
-接口清理接口（sys接口清理时，会自动调用此接口）
-
-
-#### api:set_handler(handler, watch_data)
+### set_handler
+> function api:set_handler(handler, watch_data)
 
 设定处理函数。
 
@@ -35,12 +31,14 @@ api:set_handler({
 ```
 
 
-#### api:list_devices()
+### list_devices
+> function api:list_devices()
 
 枚举系统中所有设备对象的描述信息 (meta, inputs, outputs, commands等等)
 
 
-#### api:add_device(sn, meta, inputs, outputs, commands)
+### add_device
+> function api:add_device(sn, meta, inputs, outputs, commands)
 
 创建新的采集设备对象。返回设备对象实例（参考[设备API](device.md))。
 
@@ -51,26 +49,34 @@ api:set_handler({
 * commands：设备控制项列表
 
 
-#### api:del_device(dev)
+### del_device
+> function api:del_device(dev)
 
 删除设备。 dev为设备对象实例。
 
 
-#### api:get_device(sn)
+### get_device
+> function api:get_device(sn)
 
 获取设备对象实例。 此接口对象只能用来读取设备输入项数据，写入设备输出项，发送设备控制项。
 
 
-#### api:send_ctrl(app, ctrl, params)
+### send_ctrl
+> function api:send_ctrl(app, ctrl, params)
 
 发送应用控制指令。 会调用应用设定的handler.on_ctrl
 
 
-#### api:\_dump_comm(sn, dir, ...)
+### cleanup
+> function api:cleanup()
+
+接口清理接口（sys接口清理时，会自动调用此接口）
+
+### api:\_dump_comm(sn, dir, ...)
 
 *内部接口*
 
 
-#### api:\_fire_event(sn, level, data, timestamp)
+### api:\_fire_event(sn, level, data, timestamp)
 
 *内部接口*

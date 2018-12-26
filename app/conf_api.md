@@ -15,7 +15,8 @@
 * FreeIOE还提供基于设备模板和设备列表的上层[配置帮助接口](conf_helper.md)。
 
 
-#### api:initialize(app, conf, ext, dir)
+### initialize
+> function api:initialize(app, conf, ext, dir)
 
 构造函数
 
@@ -31,12 +32,14 @@
 > ```
 
 
-#### api:version()
+### version
+> function api:version()
 
 获取当前配置的最新版本号
 
 
-#### api:data(version)
+### data
+> function api:data(version)
 
 获取制定版本的配置项内容。
 

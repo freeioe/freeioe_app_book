@@ -4,7 +4,7 @@
 # 事件接口
 
 
-#### 等级
+### 等级
 
 事件有以下等级:
 ``` lua
@@ -24,7 +24,7 @@ local lvl = event.LEVEL_INFO
 ```
 
 
-#### 类型
+### 类型
 
 事件有以下类型
 
@@ -45,7 +45,8 @@ local type = event.EVENT_DATA
 ```
 
 
-####  type_to_string(type)
+###  type_to_string
+> function type_to_string(type)
 
 事件类型转换函数:
 
