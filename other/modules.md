@@ -70,6 +70,6 @@
 | plctag | [srdgame/libplctag](https://github.com/srdgame/libplctag) | Allen-Bradley PLC 协议库的Lua扩展模块 |
 
 
-> 可以从[这里](https://github.com/freeioe/freeioe_prebuild_exts) 获取二进制文件
-> 如何在FreeIOE应用中使用非集成模块，[参考](https://github.com/freeioe/freeioe_example_apps/blob/master/opcua_client/depends.txt)
+> 可以从[这里](https://github.com/freeioe/freeioe_prebuild_exts) 获取二进制文件  
+> 如何在FreeIOE应用中使用非集成模块，[参考](https://github.com/freeioe/freeioe_example_apps/blob/master/opcua_client/depends.txt)  
 > 
