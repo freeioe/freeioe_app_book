@@ -6,5 +6,5 @@
 * [Lua语言学习](learning_lua.md)
 * [二进制数据操作](binary.md)
 * [文件操作](file.md)
-* [内置模块](modules.md)
+* [Lua模块](modules.md)
 

@@ -38,4 +38,4 @@
   * [Lua语言学习](other/learning_lua.md)
   * [二进制数据操作](other/binary.md)
   * [文件操作](other/file.md)
-  * [内置模块](other/modules.md)
+  * [Lua模块](other/modules.md)
