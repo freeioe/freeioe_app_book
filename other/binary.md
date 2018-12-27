@@ -20,17 +20,25 @@ Lua 构建和解析二进制数据有两种方式：
 
 ```lua
 local toInt16  = function(val)
-    local val = (val + 65536) % 65536
-    local hv = math.floor((val / 256) % 256) 
-    local lv = math.floor(val % 256)
+    local val = (val + 0xFFFF) % 0xFFFF
+    local hv = math.floor((val / 0xFF) % 0xFF) 
+    local lv = math.floor(val % 0xFF)
     return string.char(hv)..string.char(lv)
 end
 local fromInt16= function(data)
     local val = _M.uint16(data, index)
-    val = ((val + 32768) % 65536) - 32768
+    val = ((val + 0x8000) % 0xFFFF) - 0x8000
     return val
 end
+
+--[[
+0xFF = 256
+0xFFFF = 65536
+0x8000 = 32768
+]]--
+
 ```
+
 
 ## 使用string.pack, string.unpack
 

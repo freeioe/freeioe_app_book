@@ -14,13 +14,32 @@
 
 参考：[io.open](http://www.lua.org/manual/5.3/manual.html#pdf-io.open)
 
+
 ### CSV文件读写
 
-参考：[ftcsv](https://github.com/FourierTransformer/ftcsv)
+FreeIOE 内置以下模块:
+
+* [ftcsv](https://github.com/FourierTransformer/ftcsv)
+* [lcsv](https://github.com/daelvn/lcsv)
+
 
 ### INI文件读写
 
-参考：[inifile](http://docs.bartbes.com/inifile)
+FreeIOE 内置以下模块:
+
+* [inifile](http://docs.bartbes.com/inifile)
+* [LIP](https://github.com/Dynodzzo/Lua_INI_Parser)
+
+
+### XML文件读写
+
+推荐使用以下模块(FreeIOE 未集成任何XML模块)：
+
+1. [xml2lua](https://github.com/manoelcampos/xml2lua) 只解析XML
+2. [SLAXML](https://github.com/Phrogz/SLAXML) 解析生成XML
+3. [luaxml]( https://github.com/natnat-mc/luaxml) 解析生成XML
+
+更多XML相关模块: [lua-users](http://lua-users.org/wiki/LuaXml)
 
 
 ## LuaFileSystem
