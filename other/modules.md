@@ -65,9 +65,11 @@
 
 | 名称 | 地址 | 说明 |
 | :--- | :--- | :--- |
-| opcua | [symgrid/open62541-lua](https://github.com/symgrid/open62541-lua) | 封装了open62541协议库的Lua扩展模块(OPCUA) |
-| snap7 | [srdgame/lua-snap7](https://github.com/srdgame/lua-snap7) | 封装了snap7协议库的Lua扩展模块(Siemens PLC) |
-| plctag | [srdgame/libplctag](https://github.com/srdgame/libplctag) | 封装了访问Allen-Bradley PLC 协议库的Lua扩展模块( AB/Allen Bradley PLC ) |
+| opcua | [symgrid/open62541-lua](https://github.com/symgrid/open62541-lua) | OPC UA(open62541)协议库的Lua扩展模块 |
+| snap7 | [srdgame/lua-snap7](https://github.com/srdgame/lua-snap7) | Snap7协议库的Lua扩展模块(Siemens PLC) |
+| plctag | [srdgame/libplctag](https://github.com/srdgame/libplctag) | Allen-Bradley PLC 协议库的Lua扩展模块 |
 
 
-> 可以从[这里](https://github.com/freeioe/freeioe_prebuild_exts) 获取
+> 可以从[这里](https://github.com/freeioe/freeioe_prebuild_exts) 获取二进制文件
+> 如何在FreeIOE应用中使用非集成模块，[参考](https://github.com/freeioe/freeioe_example_apps/blob/master/opcua_client/depends.txt)
+> 
