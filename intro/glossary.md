@@ -5,7 +5,7 @@
 
 ### FreeIOE  
 
-物联网智能框架。 [项目地址](http://freeioe.org)
+物联网智能网关框架。 [项目地址](http://freeioe.org)
 
 
 ### 应用

@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [基础](intro/README.md)
+* [基础介绍](intro/README.md)
   * [FreeIOE是什么](intro/freeioe.md)
   * [名词解释](intro/glossary.md)
 * [开发环境搭建](dev_setup/README.md)
