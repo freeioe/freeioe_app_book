@@ -15,6 +15,14 @@
 参考：[io.open](http://www.lua.org/manual/5.3/manual.html#pdf-io.open)
 
 
+### JSON 文件读写
+
+FreeIOE 内置以下模块:
+
+* [lua-cjson](https://github.com/cloudwu/lua-cjson)
+* [json.lua](https://github.com/rxi/json.lua)
+
+
 ### CSV文件读写
 
 FreeIOE 内置以下模块:
