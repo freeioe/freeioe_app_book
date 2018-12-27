@@ -12,6 +12,7 @@ FreeIOE基础介绍
 
 * [FreeIOE是什么](intro/freeioe.md)
 * [名词解释](intro/glossary.md)
+* [什么是物联网](intro/iot.md)
 
 
 ## 开发环境搭建

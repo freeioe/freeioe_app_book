@@ -4,6 +4,7 @@
 * [基础介绍](intro/README.md)
   * [FreeIOE是什么](intro/freeioe.md)
   * [名词解释](intro/glossary.md)
+  * [什么是物联网](intro/iot.md)
 * [开发环境搭建](dev_setup/README.md)
   * [注册开发者账户](dev_setup/account.md)
   * [虚拟机开发环境](dev_setup/vbox.md)
