@@ -5,6 +5,9 @@
 
 
 本模块封装了MQTT上送数据的基础逻辑。帮助用户快速开发通过MQTT协议上送设备数据到云服务的应用。
+示例:
+* [阿里云接入](https://github.com/freeioe/freeioe_example_apps/blob/master/aliyun/app.lua)
+* [百度云接入](https://github.com/freeioe/freeioe_example_apps/blob/master/baidu/app.lua)
 
 
 ## 构造 (同应用构造函数)
@@ -135,7 +138,7 @@
 > function app:on_stat(app_src, device_sn, stat, prop, value, timestamp)
 >
 
-通过此接口可以监听通讯统计数据（详情参考统计接口的文档获取更详细信息）
+通过此接口可以监听统计数据（详情参考统计接口的文档获取更详细信息）
 
 #### on_publish_cached_data_list
 > function app:on_publish_cached_data_list(val_list)

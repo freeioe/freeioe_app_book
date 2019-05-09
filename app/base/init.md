@@ -6,6 +6,8 @@
 
 本模块封装了应用的基础逻辑。帮助用户快速开发FreeIOE应用。
 
+示例: [示例应用](https://github.com/freeioe/freeioe_example_apps/blob/master/sample/app.lua)
+
 
 ## 封装的函数
 
