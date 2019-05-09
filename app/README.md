@@ -11,3 +11,5 @@
 * [事件类型和等级](event.md)
 * [云配置接口](conf_api.md)
 * [云配置帮助接口](conf_helper.md)
+* [基础应用封装模块](base/init.md)
+* [MQTT应用封装模块](base/mqtt.md)
