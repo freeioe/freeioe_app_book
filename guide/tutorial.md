@@ -21,7 +21,7 @@ APP应用的入口是一个符合FreeIOE框架接口定义的特定Lua模块文�
 
 ### TCP 套接字
 
-FreeIOE框架提供两种TCP Socket连接方式:
+FreeIOE框架提供TCP Socket连接有以下几种方式:
 1. [SocketChannel](https://github.com/cloudwu/skynet/wiki/socketchannel)
 > Skynet 框架提供的TCP Socket通讯框架。有两种工作模式:
 > * 同步模式
@@ -32,7 +32,7 @@ FreeIOE框架提供两种TCP Socket连接方式:
 
 ### 连接设备(串口)
 
-FreeIOE 集成了[librs232](http://github.com/srdgame/librs232)模块，支持用户访问串口设备。可选择:
+FreeIOE 集成了[librs232](http://github.com/srdgame/librs232)模块，支持用户访问串口设备。
 1. SerialChannel
 > 同SocketChannel模式的通讯框架
 2. [app.serial](../app/serial.md)
