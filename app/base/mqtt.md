@@ -8,6 +8,7 @@
 示例:
 * [阿里云接入](https://github.com/freeioe/freeioe_example_apps/blob/master/aliyun/app.lua)
 * [百度云接入](https://github.com/freeioe/freeioe_example_apps/blob/master/baidu/app.lua)
+* [广州联通云平台接入](https://github.com/freeioe/freeioe_example_apps/blob/master/telit/app.lua)
 
 
 ## 构造 (同应用构造函数)
