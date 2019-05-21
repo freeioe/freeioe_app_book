@@ -129,7 +129,8 @@
 > function app:pack_key(app_src, device_sn, input, prop)
 >
 
-用以创建数据点唯一标识，默认本模块会以 <sn>/<input>/<prop>进行编码，如有需要则重载此函数。次函数返回空(nil)表示该点数据需要忽略。
+* 用以创建数据点唯一标识，默认本模块会以 <sn>/<input>/<prop>进行编码，如有需要则重载此函数。
+* 其次函数返回空(nil)表示该点数据需要忽略。(可以用作忽略某种数据，或忽略某些设备的数据)
 
 #### on_publish_data_em
 > function app:on_publish_data_em(key, value, timestamp, quality)
