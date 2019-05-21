@@ -15,12 +15,19 @@
 
 ### 配置信息可以通过包含以下信息，来进行MQTT连接认证：
 > client_id: MQTT Client ID
+>
 > username: MQTT User id
+>
 > password: MQTT User password
+>
 > server: MQTT Broker address (domain or ip)
+>
 > port: MQTT Broker port
+>
 > enable_tls: MQTT TLS enable or not
+>
 > tls_cert: MQTT Server cert file (if TLS enabled)
+>
 
 ### 其他配置：
 
@@ -73,21 +80,34 @@
 
 ### 必选回调函数
 > function app:on_publish_data
+>
 > function app:on_publish_data_list
 
 ### 可选回调函数
 > function app:pack_key
+>
 > function app:on_publish_data_em
+>
 > function app:on_publish_devices
+>
 > function app:on_comm
+>
 > function app:on_event
+>
 > function app:on_stat
+>
 > function app:on_publish_cached_data_list
+>
 > function app:mqtt_auth
+>
 > function app:mqtt_will
+>
 > function app:on_mqtt_connect_ok
+>
 > function app:on_mqtt_message
+>
 > function app:on_mqtt_publish
+>
 
 
 ### 回调函数说明
