@@ -7,7 +7,7 @@
 本模块封装了MQTT上送数据的基础逻辑。帮助用户快速开发通过MQTT协议上送设备数据到云服务的应用。
 示例:
 * [阿里云接入](https://github.com/freeioe/freeioe_example_apps/blob/master/aliyun/app.lua)
-* [百度云接入](https://github.com/freeioe/freeioe_example_apps/blob/master/baidu/app.lua)
+* [百度云接入](https://github.com/freeioe/freeioe_example_apps/blob/master/baidu_cloud/app.lua)
 * [广州联通云平台接入](https://github.com/freeioe/freeioe_example_apps/blob/master/telit/app.lua)
 
 
