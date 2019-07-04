@@ -53,12 +53,13 @@
 | 模块 | 说明 |
 | :--- | :--- |
 | gcom | 调用gcom脚本获取信号强度，SIM卡信息等 |
-| led | 控制设备led灯 |
+| [leds](utils/leds.md) | 控制设备led灯 |
+| [gpios](utils/gpios.md) | 控制设备GPIO输出 |
 | log | 日志模块(使用lua-log模块实现) |
 | process_monitor | 调用process monitor监控运行其他进程 |
 | services | 使用系统(Linux) 服务来监控运行其他进程 |
 | retry | 限制次数的自动重试 |
-| sysinfo | 系统信息获取帮助模块 |
+| [sysinfo](utils/sysinfo.md) | 系统信息获取帮助模块 |
 
 
 ## 非集成扩展模块
