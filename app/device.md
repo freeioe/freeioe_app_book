@@ -69,15 +69,23 @@ dev:set_input_prop("Temperature", "value", 10)
 
 
 ### set_output_prop
-> function device:set_output_prop(output, prop, value)
+> function device:set_output_prop(output, prop, value, timestamp, priv)
 
 写入输出项数据
+* output: 设备输出项名称
+* prop: 属性名称（通常为value)
+* value: 输出的数据值
+* timestamp: 输出请求的时间（默认为网关当前时间)
+* priv: 输出请求私有数据（用以跟踪执行结果)
 
 
 ### send_command
-> function device:send_command(command, param)
+> function device:send_command(command, param, priv)
 
 发送设备控制指令
+* command: 设备指令名称
+* param: 指令参数
+* priv: 指令请求私有数据（用以跟踪执行结果)
 
 
 ### list_props

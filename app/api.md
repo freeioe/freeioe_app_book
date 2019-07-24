@@ -26,7 +26,9 @@ api:set_handler({
 	on_del_device = function(...) end, -- watch_data = true
 	on_mod_device = function(...) end, -- watch_data = true
 	on_output = function(...) end, -- 数据输出项回调
+	on_output_result = function(...) end, -- 数据输出项请求执行结果回调
 	on_command = function(...) end, -- 命令回调
+	on_command_result = function(...) end, -- 命令请求执行结果回调
 	on_ctrl = function(...) end, -- 应用控制接口
 ```
 
