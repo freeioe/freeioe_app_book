@@ -114,5 +114,11 @@ dev:set_input_prop("Temperature", "value", 10)
 
 ### cleanup
 > function device:cleanup()
+
 设备清理接口。*此接口为内部接口，无需主动调用*。
 
+### share
+> function device:share(secret)
+
+设定设备共享密钥，知晓此密钥的其他应用可以获取设备输入项数据的写入权限。
+参考：api:get_device(sn, secret)接口

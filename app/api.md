@@ -58,9 +58,11 @@ api:set_handler({
 
 
 ### get_device
-> function api:get_device(sn)
+> function api:get_device(sn, secret)
 
-获取设备对象实例。 此接口对象只能用来读取设备输入项数据，写入设备输出项，发送设备控制项。
+获取设备对象实例。 此接口对象可以用来读取设备输入项数据，写入设备输出项，发送设备控制项。
+当secret值被指定且与设备源应用中设定的secret值一致时，可获取设备的输入项数据写入的权限。
+参考: device:share(secret)接口
 
 
 ### send_ctrl
