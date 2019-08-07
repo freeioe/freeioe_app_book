@@ -39,6 +39,7 @@
 
 | 模块 | 说明 |
 | :--- | :--- |
+| ioe | FreeIOE设备信息获取、设定 |
 | SerialChannel | 接口模式同SocketChannel，区别是串口通道只支持SocketChannel中的模式1(即一问一答模式) |
 | cyclebuffer | 循环缓存模块(设定最大缓存条目后，会自动丢弃最老数据) |
 | periodbuffer | 批次数据整理模块 |

@@ -111,7 +111,7 @@
 ### platform
 > function sysinfo.platform()
 
-获取操作系统和CPU架构信息，如: openwrt/x86_64 openwrt/arm_cortex-a7_neon_vfpv4
+获取操作系统名称版本和CPU架构信息，如: openwrt/18.06/x86_64 openwrt/19.07/arm_cortex-a7_neon_vfpv4
 
 
 ### ioe_sn
@@ -125,10 +125,21 @@
 
 获取硬件系统固件版本信息(非操作系统版本)
 
+### board_name
+> function sysinfo.board_name()
+
+获取硬件名称（仅限OpenWRT系统)。如: tgw303, tlink-x1, Q2040等。 读取的是/tmp/sysinfo/board_name文件
+
 
 ### data_dir
 > function sysinfo.data_dir()
 
 获取设备可用以存储数据的路径信息， 如返回/tmp则代表此设备没有存储器可以用来进行数据存储。
+
+
+### TZ
+> function sysinfo.TZ()
+
+获取设备的时区名称。 OpenWRT下是/tmp/TZ文件内容，如CST-8。 普通Linux是的/etc/timezone内容，如Asia/Shanghai。 获取失败时返回UTC
 
 
