@@ -50,6 +50,9 @@ FreeIOE基础介绍
 * [云配置帮助接口](app/conf_helper.md)
 * [基础应用封装模块](app/base/init.md)
 * [MQTT应用封装模块](app/base/mqtt.md)
+* 其他模块
+	* [数据通讯模块](port/README.md)
+	* [工具类模块](utils/README.md)
 
 
 ## 应用发布
