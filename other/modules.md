@@ -40,11 +40,12 @@
 | 模块 | 说明 |
 | :--- | :--- |
 | ioe | FreeIOE设备信息获取、设定 |
-| SerialChannel | 接口模式同SocketChannel，区别是串口通道只支持SocketChannel中的模式1(即一问一答模式) |
-| cyclebuffer | 循环缓存模块(设定最大缓存条目后，会自动丢弃最老数据) |
-| periodbuffer | 批次数据整理模块 |
-| summation | 累计计数模块(适用于网络使用量计算，涉及重启基数归零后的重置计算等等) |
-| cov | 变化处理模块，可以用数据变化传输 |
+| [serialdriver](serialdriver.md) | 串口模块librs232轻度封装模块 |
+| [serialchannel](serialchannel.md) | 接口模式同SocketChannel，区别是串口通道只支持SocketChannel中的模式1(即一问一答模式) |
+| [cyclebuffer](buffer/cycle.md) | 循环缓存模块(设定最大缓存条目后，会自动丢弃最老数据) |
+| [periodbuffer](buffer/period.md) | 批次数据整理模块 |
+| [summation](summation.md) | 累计计数模块(适用于网络使用量计算，涉及重启基数归零后的重置计算等等) |
+| [cov](cov.md) | 变化处理模块，可以用数据变化传输 |
 | ubus/ubox | ubus消息解析模块 |
 | restful | RestFul API模块(使用skynet http模块实现) |
 
