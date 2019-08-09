@@ -19,18 +19,23 @@ FreeIOE框架为每个应用创建的服务接口，用以帮助应用快速构�
 ```
 local api = sys:data_api()
 api:set_handler({
-	on_comm = function(app, sn, ...) end, -- watch_data = true
-	on_stat = function(app, sn, ...) end, -- watch_data = true
-	on_input = function(...) end, -- watch_data = true
-	on_add_device = function(...) end, -- watch_data = true
-	on_del_device = function(...) end, -- watch_data = true
-	on_mod_device = function(...) end, -- watch_data = true
-	on_output = function(...) end, -- 数据输出项回调
-	on_output_result = function(...) end, -- 数据输出项请求执行结果回调
-	on_command = function(...) end, -- 命令回调
-	on_command_result = function(...) end, -- 命令请求执行结果回调
-	on_ctrl = function(...) end, -- 应用控制接口
+	on_comm = function(src_app, dev_sn, dir, timestamp, ...) end, -- watch_data = true
+	on_stat = function(src_app, dev_sn, state, prop, value, timestamp) end, -- watch_data = true
+	on_input = function(src_app, dev_sn, input, prop, value, timestamp, quality) end, -- watch_data = true
+	on_add_device = function(src_app, dev_sn, props) end, -- watch_data = true
+	on_del_device = function(src_app, dev_sn, props) end, -- watch_data = true
+	on_mod_device = function(src_app, dev_sn) end, -- watch_data = true
+	on_output = function(src_app, dev_sn, output, prop, value, timestamp) end, -- 数据输出项回调
+	on_output_result = function(src_app, priv, result, err) end, -- 数据输出项请求执行结果回调
+	on_command = function(src_app, dev_sn, command, params) end, -- 命令回调
+	on_command_result = function(src_app, priv, result, err) end, -- 命令请求执行结果回调
+	on_ctrl = function(src_app, command, params) end, -- 应用控制接口
+	on_ctrl_result = function(src_app, priv, result, err) end, -- 应用控制执行结果回调
 ```
+
+备注:
+* src_app -- 消息源应用的实例名(string)
+* dev_sn -- 设备序列号(string)
 
 
 ### list_devices
@@ -68,7 +73,7 @@ api:set_handler({
 ### send_ctrl
 > function api:send_ctrl(app, ctrl, params)
 
-发送应用控制指令。 会调用应用设定的handler.on_ctrl
+发送应用控制指令。 会调用应用设定的handler.on_ctrl。 如需跟踪结果需要设定on_ctrl_result处理函数
 
 
 ### cleanup

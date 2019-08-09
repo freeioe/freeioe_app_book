@@ -78,6 +78,8 @@ dev:set_input_prop("Temperature", "value", 10)
 * timestamp: 输出请求的时间（默认为网关当前时间)
 * priv: 输出请求私有数据（用以跟踪执行结果)
 
+当本函数返回成功后，如需要跟踪执行结果则需要注册on_output_result钩子函数
+
 
 ### send_command
 > function device:send_command(command, param, priv)
@@ -87,6 +89,7 @@ dev:set_input_prop("Temperature", "value", 10)
 * param: 指令参数
 * priv: 指令请求私有数据（用以跟踪执行结果)
 
+当本函数返回成功后，如需要跟踪执行结果则需要注册on_command_result钩子函数
 
 ### list_props
 > function device:list_props()

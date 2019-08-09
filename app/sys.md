@@ -207,6 +207,12 @@ print(app_id, version)
 发送异步请求，相应函数为app.accept或者app.on_post_<msg>函数
 
 
+### set_event_threshold
+> function sys:set_event_threshold(count_per_min)
+
+设定应用发送事件的数量限制（每分钟)，默认情况下应用每分钟最多只能发送20条事件。取值范围是0~127,超过限制的事件会被FreeIOE框架丢弃。
+
+
 ### cleanup
 > function sys:cleanup()
 

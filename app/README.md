@@ -13,3 +13,7 @@
 * [云配置帮助接口](conf_helper.md)
 * [基础应用封装模块](base/init.md)
 * [MQTT应用封装模块](base/mqtt.md)
+
+## 其他模块
+* [数据通讯模块](port/README.md)
+* [工具类模块](utils/README.md)
