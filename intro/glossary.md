@@ -5,22 +5,22 @@
 
 ### FreeIOE  
 
-物联网智能网关框架。 [项目地址](http://freeioe.org)
+物联网边缘计算网关框架。 [项目地址](http://freeioe.org)
 
 
 ### 应用
 
-基于FreeIOE框架开发的物联网应用,可用于：数据采集、平台连接、设备维护、边缘计算等等
+基于FreeIOE框架开发的物联网边缘计算应用，例如：数据采集、数据上云、远程编程、设备维护、数据清洗等等
 
 
 ### 云平台(冬笋云)
 
-由冬笋科技开发的物联网设备管理维护平台，并提供FreeIOE应用中心等功能。 [地址](http://cloud.thingsroot.com)
+由冬笋科技开发的用于 [FreeIOE](https://freeioe.org) 网关管理、网管维护以及应用中心等功能。 [冬笋云地址](http://cloud.thingsroot.com)
 
 
 ### 设备
 
-代指FreeIOE智能网关联接的自动化设备，如PLC,CNC,电表,UPS等等
+代指FreeIOE智能网关联接的自动化设备，如PLC,CNC,智能仪表，智能电表,UPS等等
 
 * 输入项  
 	设备从传感器或本机获取的数值
@@ -54,7 +54,7 @@
 
 ### Skynet
 
-FreeIOE的基础框架，为C语言开发的Actor模式的Lua服务框架
+FreeIOE的基础框架，为C语言开发的Actor模式的Lua服务框架。[项目地址](http://github.com/cloudwu/skynet)
 
 
 ### 应用配置
