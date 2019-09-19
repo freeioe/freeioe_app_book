@@ -1,6 +1,6 @@
 ---
 
-# 设备接口
+# 设备对象接口
 
 设备对象具备的接口列表
 
@@ -89,13 +89,50 @@ dev:set_input_prop("Temperature", "value", 10)
 * param: 指令参数
 * priv: 指令请求私有数据（用以跟踪执行结果)
 
-当本函数返回成功后，如需要跟踪执行结果则需要注册on_command_result钩子函数
+当本函数返回成功后，如需要跟踪执行结果则需要注册on_command_result钩子函数。 若无需等待结果，则使用nil作为priv的值
+
+### sn
+> function device:sn()
+
+获取当前设备的序列号。
+
+> *** API_VER: 5 ***
 
 ### list_props
 > function device:list_props()
 
 获取设备属性，包含inputs, outputs, commands
 
+### list_inputs
+> function device:list_inputs(data_callback)
+
+获取设备所有输入项数据，data_callback的原型为 function data_callback(input_name, prop, value, timestamp, quality)
+
+> *** API_VER: 4 ***
+
+### data
+> function device:data(opt)
+
+获取设备所有输入项数据，返回结果是以input name为key的table，值包含: value, timestamp, quality属性
+
+> *** API_VER: 4 ***
+
+### cov
+> function device:cov(opt)
+
+开启设备本地变化发布功能，仅当数据有了变化，才发布给FreeIOE以及其他应用。 opt可以包含：
+1. float_threshold: 浮点数据变化最小值，默认为0.000001
+2. ttl: 当数据没有变化时，周期发布的时间间隔。 默认不开启
+3. min_ttl_gap: 最小ttl检测周期，默认为10，单位是百分之一秒
+
+> *** API_VER: 4 ***
+
+### flush_data
+> function device:flush_data(opt)
+
+强制将当前最新数据遍历并发布到FreeIOE和其他应用
+
+> *** API_VER: 4 ***
 
 ### dump_comm
 > function device:dump_comm(dir, ...)
@@ -125,3 +162,5 @@ dev:set_input_prop("Temperature", "value", 10)
 
 设定设备共享密钥，知晓此密钥的其他应用可以获取设备输入项数据的写入权限。
 参考：api:get_device(sn, secret)接口
+
+> *** API_VER: 5 ***

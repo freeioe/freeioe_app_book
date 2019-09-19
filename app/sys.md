@@ -207,6 +207,28 @@ print(app_id, version)
 发送异步请求，相应函数为app.accept或者app.on_post_<msg>函数
 
 
+### cloud_post
+> function sys:cloud_post(func, ...)
+
+请求云平台连接接口：
+* enable_data_one_short
+* enable_event
+* download_cfg
+* upload_cfg
+* fire_data_snapshot
+* batch_script
+
+*** API_VER: 5 ***
+
+### cfg_call
+> function sys:cfg_call(func, ...)
+
+请求FreeIOE系统配置服务接口：
+* SAVE
+
+*** API_VER: 5 ***
+
+
 ### set_event_threshold
 > function sys:set_event_threshold(count_per_min)
 

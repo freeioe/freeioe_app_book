@@ -10,6 +10,7 @@
 * [百度云接入](https://github.com/freeioe/freeioe_example_apps/blob/master/baidu_cloud/app.lua)
 * [广州联通云平台接入](https://github.com/freeioe/freeioe_example_apps/blob/master/telit/app.lua)
 
+> *** API_VER: 5 ***
 
 ## 构造 (同应用构造函数)
 > function initialize(name, sys, conf)
@@ -25,9 +26,19 @@
 >
 > port: MQTT Broker port
 >
+> clean_session: Whether the session subscribes will be cleaned on disconnection
+>
 > enable_tls: MQTT TLS enable or not
 >
-> tls_cert: MQTT Server cert file (if TLS enabled)
+> tls_cert: MQTT Server cert file name in app folder (if TLS enabled)
+>
+> tls_insecure: TLS insecure mode, default is false
+>
+> tls_ca_path: TLS CA files folder
+>
+> client_cert: TLS Client Cert file name in app folder
+>
+> client_key: TLS Client Key file name in app folder
 >
 
 ### 其他配置：

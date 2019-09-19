@@ -31,8 +31,8 @@ FreeIOE基础介绍
 
 了解开发应用的细节
 
-* [开发指南](guide/tutorial.md)
 * [应用简要](guide/onestep.md)
+* [开发指南](guide/tutorial.md)
 * [应用示例](guide/example.md)
 
 

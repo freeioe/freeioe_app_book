@@ -1,51 +1,7 @@
 
 ---
 
-# 开发指南
-
-
-## APP组成
-
-本章介绍如何使用[Lua5.3](http://www.lua.org/manual/5.3/)语言开发FreeIOE应用，在开始阅读本章前，请先熟悉Lua中模块的概念以及如何构建简单的Lua模块。  
- 一个经典的APP会有如下的结构：  
- ├── opcua\_client -------- ***App目录***  
- │----├── app.lua --------- ***App入口Lua文件***  
- │----├── conf.lua -------- ***App自定义模块文件***  
- │----└── luaclib --------- ***App自定义的C模块目录***  
- │----------└── opcua.so -- ***App自定义的OpcUA模块（C语言模块）***
-
-APP应用的入口是一个符合FreeIOE框架接口定义的特定Lua模块文件
-
-
-## 连接设备
-
-### TCP 套接字
-
-FreeIOE框架提供TCP Socket连接有以下几种方式:
-
-1. [SocketChannel](https://github.com/cloudwu/skynet/wiki/socketchannel) <br>
-Skynet 框架提供的TCP Socket通讯框架。有两种工作模式:<br>
-    * 同步模式
-    * 异步模式(需要协议支持Session)
-2. [app.socket](../app/socket.md)<br>
-FreeIOE 封装的简易TCP Socket模式。
-3. [Skynet Socket模块](https://github.com/cloudwu/skynet/wiki/socket)
-
-### 连接设备(串口)
-
-FreeIOE 集成了[librs232](http://github.com/srdgame/librs232)模块，支持用户访问串口设备。
-
-1. SerialChannel<br>
-同SocketChannel模式的通讯框架
-2. [app.serial](../app/serial.md)<br>
-FreeIOE 封装的建议串口模块
-3. [rs232](https://github.com/srdgame/librs232/blob/master/bindings/lua/rs232.lua)<br>
-直接使用librs232模块
-
-
-### UDP 套接字
-
-详见 Skynet Socket模块的说明。 并且FreeIOE扩展了Socket中的sendto函数，除了原本的sendto(id, from, data)之外，支持sendto(id, ip, port, data)方式直接指定发送目标的IP和端口信息。
+# 应用开发指南
 
 
 ## 创建设备模型(实例)
@@ -264,6 +220,42 @@ dev:set_input_prop_emergency('Va', "value", val, now, 0)
 	self._log:trace("read input registers done!")
 	self._log:trace("Got err:", err, "more", "log content", here)
 ```
+
+
+## 设备通讯
+
+### TCP 套接字
+
+FreeIOE框架提供TCP Socket连接有以下几种方式:
+
+1. [SocketChannel](https://github.com/cloudwu/skynet/wiki/socketchannel) <br>
+Skynet 框架提供的TCP Socket通讯框架。有两种工作模式:<br>
+    * 同步模式
+    * 异步模式(需要协议支持Session)
+2. [app.socket](../app/socket.md)<br>
+FreeIOE 封装的简易TCP Socket模式。
+3. [Skynet Socket模块](https://github.com/cloudwu/skynet/wiki/socket)
+
+参考示例应用库中的/modbus/master /modbus/slave /modbus/gateway 以及 /other/dtu 和 /example/serial_socket应用
+
+
+### 连接设备(串口)
+
+FreeIOE 集成了[librs232](http://github.com/srdgame/librs232)模块，支持用户访问串口设备。
+
+1. SerialChannel<br>
+同SocketChannel模式的通讯框架
+2. [app.serial](../app/serial.md)<br>
+FreeIOE 封装的建议串口模块
+3. [rs232](https://github.com/srdgame/librs232/blob/master/bindings/lua/rs232.lua)<br>
+直接使用librs232模块
+
+参考示例应用库中的modbus应用，以及 /other/dtu 和 /other/oliver_355_monitor、example/serial 等应用。
+
+
+### UDP 套接字
+
+详见 Skynet Socket模块的说明。 并且FreeIOE扩展了Socket中的sendto函数，除了原本的sendto(id, from, data)之外，支持sendto(id, ip, port, data)方式直接指定发送目标的IP和端口信息。
 
 
 ## 其他

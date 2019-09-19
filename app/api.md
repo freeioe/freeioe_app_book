@@ -37,6 +37,8 @@ api:set_handler({
 * src_app -- 消息源应用的实例名(string)
 * dev_sn -- 设备序列号(string)
 
+*** API_VER: 5 ***
+> API_VER 5支持了 on_output_result 和 on_command_result接口
 
 ### list_devices
 > function api:list_devices()

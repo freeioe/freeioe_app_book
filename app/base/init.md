@@ -8,6 +8,7 @@
 
 示例: [示例应用](https://github.com/freeioe/freeioe_example_apps/blob/master/sample/app.lua)
 
+> *** API_VER: 5 ***
 
 ## 模块实现的函数
 

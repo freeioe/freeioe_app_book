@@ -13,8 +13,8 @@
   * [设备Web在线开发](dev_setup/dev_web.md)
   * [使用VSCode插件开发](dev_setup/vscode-extension.md)
 * [开发引导](guide/README.md)
-  * [开发指南](guide/tutorial.md)
   * [应用简要](guide/onestep.md)
+  * [开发指南](guide/tutorial.md)
   * [应用示例](guide/example.md)
 * [接口文档](app/README.md)
   * [系统接口](app/sys.md)
@@ -42,3 +42,4 @@
   * [二进制数据操作](other/binary.md)
   * [文件操作](other/file.md)
   * [Lua模块](other/modules.md)
+1

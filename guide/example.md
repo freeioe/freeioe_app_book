@@ -1,26 +1,26 @@
 
 ---
 
-# APP示例
+# 应用示例
 
-下面代码提供一个简易的应用示例。展示：
+下面代码是一个简易的应用示例。其中展示了：
 
-* 基本的应用框架
-* 创建一个设备
+1. 基本的应用框架
+2. 创建一个设备
 	* 包含一个输入项
-* 使用随机数作为数据值
-* 输出报文
+3. 使用随机数作为数据值
+4. 输出报文
 
 
-***代码***：
+## 示例代码：
 
 ```lua
 local class = require 'middleclass'
 
 --- 注册对象(请尽量使用唯一的标识字符串)
 local app = class("YOUR_APP_NAME_App")
---- 设定应用最小运行接口版本(目前版本为1,为了以后的接口兼容性)
-app.API_VER = 1
+--- 设定应用最小运行接口版本(目前版本为5,为了以后的接口兼容性)
+app.API_VER = 5
 
 ---
 -- 应用对象初始化函数
@@ -49,7 +49,7 @@ function app:start()
 		on_input = function(app, sn, input, prop, value, timestamp, quality)
 		end,
 		]]
-		on_output = function(app, sn, output, prop, value)
+		on_output = function(app, sn, output, prop, value, timestamp)
 		end,
 		on_command = function(app, sn, command, param)
 		end,	
@@ -63,7 +63,7 @@ function app:start()
 
 	--- 增加设备实例
 	local inputs = {
-		{name="tag1", desc="tag1 desc"}
+		{name="tag1", desc="tag1 desc", unit="KV"}
 	}
 	local meta = self._api:default_meta()
 	meta.name = "Example Device"
@@ -76,7 +76,7 @@ end
 
 --- 应用退出函数
 function app:close(reason)
-	--print(self._name, reason)
+    -- 处理通讯链路关闭等
 end
 
 --- 应用运行入口
@@ -86,7 +86,7 @@ function app:run(tms)
 		dev:set_input_prop('tag1', "value", math.random())
 	end
 
-	return 10000 --下一采集周期为10秒
+	return 10000 --单位是ms, 10000代表下一采集间隔为10秒。 等同于sleep(10000)
 end
 
 --- 返回应用对象
