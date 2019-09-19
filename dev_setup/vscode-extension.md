@@ -1,28 +1,27 @@
 
 ---
 
-# 使用VS Code开发FreeIOE应用
+# 使用 VS Code 开发 FreeIOE 应用
 
 
-## 下载VS Code
+## 下载 VS Code
 
 可以从微软网站下载VS Code。[地址](https://code.visualstudio.com/)
 
 
-## 安装IOT Editor插件
+## 安装 IOT Editor 插件
 
 运行VS Code后，安装IOT Editor插件。
 
-> 另：建议安装Lua语言插件:
-> * luaide-lite
+> 另：建议安装Lua语言插件: LuaCoderAssist
 
 
 ## 使用 IOT Editor插件
 
-### 开启IOT Editor使用步骤
+### 使用步骤
 
-* 打开工作目录
-* 保存工作区
+* 创建并打开本机的工作目录
+* 保存工作区 (IOT Editor 依赖于工作区）
 * Shift + Alt + P 搜索运行 "IOT: Setup editor workspace"
 * 在打开的freeioe_devices.json文件中的devices节点下，输入正确的设备IP，并修改其设备名称
 * Shift + Alt + P 搜索运行 "IOT: Connect to freeioe device"
