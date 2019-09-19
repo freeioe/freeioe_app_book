@@ -51,8 +51,8 @@ FreeIOE基础介绍
 * [基础应用封装模块](app/base/init.md)
 * [MQTT应用封装模块](app/base/mqtt.md)
 * 其他模块
-	* [数据通讯模块](port/README.md)
-	* [工具类模块](utils/README.md)
+	* [数据通讯模块](app/port/README.md)
+	* [工具类模块](app/utils/README.md)
 
 
 ## 应用发布
