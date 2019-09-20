@@ -82,5 +82,14 @@ FreeIOE基础介绍
 * [Lua语言学习](other/learning_lua.md)
 * [二进制数据操作](other/binary.md)
 * [文件操作](other/file.md)
-* [内置模块](other/modules.md)
+* [模块列表](other/modules.md)
+* 模块说明
+    * [IOE模块](other/ioe.md)
+    * [串口操作模块](other/serialdriver.md)
+    * [累计量计算模块](other/summation.md)
+* 工具模块
+    * [helper模块](other/utils/helper.md)
+    * [leds模块](other/utils/leds.md)
+    * [gpios模块](other/utils/gpios.md)
+    * [sysinfo模块](other/utils/sysinfo.md)
 

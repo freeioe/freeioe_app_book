@@ -27,6 +27,9 @@
   * [云配置帮助接口](app/conf_helper.md)
   * [基础应用封装模块](app/base/init.md)
   * [MQTT应用封装模块](app/base/mqtt.md)
+  * 其他模块
+    * [数据通讯模块](app/port/README.md)
+    * [工具类模块](app/utils/README.md)
 * [发布应用](app_center/README.md)
   * [申请账户](app_center/reg.md)
   * [应用打包](app_center/pack.md)
@@ -41,4 +44,13 @@
   * [Lua语言学习](other/learning_lua.md)
   * [二进制数据操作](other/binary.md)
   * [文件操作](other/file.md)
-  * [Lua模块](other/modules.md)
+  * [模块列表](other/modules.md)
+  * 模块说明
+    * [IOE模块](other/ioe.md)
+    * [串口操作模块](other/serialdriver.md)
+    * [累计量计算模块](other/summation.md)
+  * 工具模块
+    * [helper模块](other/utils/helper.md)
+    * [leds模块](other/utils/leds.md)
+    * [gpios模块](other/utils/gpios.md)
+    * [sysinfo模块](other/utils/sysinfo.md)

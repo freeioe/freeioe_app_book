@@ -74,3 +74,21 @@
 > function ioe.starttime()
 
 获取FreeIOE系统启动的时间。（非时长，非硬件启动时间，请使用sysinfo.uptime获取硬件启动时长)
+
+
+### abort_prepare
+
+> *** API_VER: 5 ***
+
+> function ioe.abort_preapre()
+
+FreeIOE 系统重启前的准备工作，如关闭所有应用
+
+
+### abort
+
+> *** API_VER: 5 ***
+
+> function ioe.abort(timeout)
+
+FreeIOE系统重启（非操作系统重启)。 自动调用abort_prepare函数。 timeout为等待重启准备工作完成的时间长度，默认为5000, 单位是ms。
