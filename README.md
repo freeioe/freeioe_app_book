@@ -45,7 +45,6 @@ FreeIOE基础介绍
 * [申请账户](app_center/reg.md)
 * [应用打包](app_center/pack.md)
 * [版本上传](app_center/upload.md)
-* [克隆应用](app_center/fork.md)
 
 
 ## 应用接口文档

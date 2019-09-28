@@ -11,7 +11,7 @@
 
 ## 提交开发者申请资料
 
-开发者权限需要提交[申请](http://store.thingsroot.com/reg)
+开发者权限需要提交[申请](http://cloud.thingsroot.com/developer)
 
 > 只有具有开发者权限的用户，才能将应用发布至应用中心。
 

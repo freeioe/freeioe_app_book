@@ -6,7 +6,7 @@
 
 ## 新建应用
 
-获取开发者账户后，可以通过 http://iot.thingsroot.com/app_list 新建应用
+获取开发者账户后，可以通过 [云平台](http://cloud.thingsroot.com/developer) 新建应用
 
 
 ### 应用介绍
