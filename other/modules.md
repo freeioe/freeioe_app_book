@@ -68,9 +68,9 @@
 
 | 名称 | 地址 | 说明 |
 | :--- | :--- | :--- |
-| opcua | [symgrid/open62541-lua](https://github.com/symgrid/open62541-lua) | OPC UA(open62541)协议库的Lua扩展模块 |
-| snap7 | [srdgame/lua-snap7](https://github.com/srdgame/lua-snap7) | Snap7协议库的Lua扩展模块(Siemens PLC) |
-| plctag | [srdgame/libplctag](https://github.com/srdgame/libplctag) | Allen-Bradley PLC 协议库的Lua扩展模块 |
+| opcua | [open62541-lua](https://github.com/srdgame/open62541-lua) | OPC UA(open62541)协议库的Lua扩展模块 |
+| snap7 | [lua-snap7](https://github.com/srdgame/lua-snap7) | Snap7协议库的Lua扩展模块(Siemens PLC) |
+| plctag | [libplctag](https://github.com/srdgame/libplctag) | Allen-Bradley PLC 协议库的Lua扩展模块 |
 
 
 > 可以从[这里](https://github.com/freeioe/freeioe_prebuild_exts) 获取二进制文件  
