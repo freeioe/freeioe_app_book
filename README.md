@@ -34,11 +34,23 @@ FreeIOE基础介绍
 * [应用简要](guide/onestep.md)
 * [开发指南](guide/tutorial.md)
 * [应用示例](guide/example.md)
+* [应用示例代码库 1](https://github/freeioe/freeioe_example_apps)
+* [应用示例代码库 2](https://github.com/viccom/myfreeioe_apps)
 
 
-## 接口文档
+## 应用发布
 
-平台为应用开发者提供了一系列的接口，方便用户开发基于FreeIOE平台的设备应用
+发布您的应用到应用中心，以便在设备中使用它
+
+* [申请账户](app_center/reg.md)
+* [应用打包](app_center/pack.md)
+* [版本上传](app_center/upload.md)
+* [克隆应用](app_center/fork.md)
+
+
+## 应用接口文档
+
+FreeIOE给应用开发提供的接口列表
 
 * [系统接口](app/sys.md)
 * [基础接口](app/api.md)
@@ -54,28 +66,7 @@ FreeIOE基础介绍
 	* [数据通讯模块](app/port/README.md)
 	* [工具类模块](app/utils/README.md)
 
-
-## 应用发布
-
-发布您的应用到应用中心，以便在设备中使用它
-
-* [申请账户](app_center/reg.md)
-* [应用打包](app_center/pack.md)
-* [版本上传](app_center/upload.md)
-* [克隆应用](app_center/fork.md)
-
-
-## 应用示例
-
-提供一系列的应用示例
-
-* [Modbus示例](examples/modbus.md)
-* [OpcUA采集示例](examples/opcuacollect.md)
-* [OpcUA服务示例](examples/opcuaserver.md)
-* [MQTT示例](examples/mqtt.md)
-
-
-## 其它
+## 其它资料 & 文档
 
 其它有关的资料索引
 
