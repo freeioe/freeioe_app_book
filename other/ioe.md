@@ -68,7 +68,7 @@
 ### time
 > function ioe.time()
 
-获取系统时间，返回浮点数字，整数是秒数，小树是毫秒值（只保留了两位精度)
+获取系统时间，返回浮点数字，整数部分是秒数(Unix时间戳)，小数部分是毫秒值（只保留了两位精度)
 
 ### starttime
 > function ioe.starttime()
