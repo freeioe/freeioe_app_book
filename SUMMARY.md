@@ -54,3 +54,4 @@
     * [leds模块](other/utils/leds.md)
     * [gpios模块](other/utils/gpios.md)
     * [sysinfo模块](other/utils/sysinfo.md)
+    * [周期计时模块](other/utils/timer.md)
