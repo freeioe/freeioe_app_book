@@ -239,7 +239,7 @@ FreeIOE 封装的简易TCP Socket模式。
 参考示例应用库中的/modbus/master /modbus/slave /modbus/gateway 以及 /other/dtu 和 /example/serial_socket应用
 
 
-### 连接设备(串口)
+### 串口通讯
 
 FreeIOE 集成了[librs232](http://github.com/srdgame/librs232)模块，支持用户访问串口设备。
 
@@ -263,6 +263,8 @@ FreeIOE 封装的建议串口模块
 
 ### 设备序列号生成
 
+FreeIOE要求有所设备对象必须有自己的唯一的序列号，此唯一不但是指网关设备内唯一，而且要求保证在平台内唯一。
+
 如设备协议中并未提供设备的序列号读取方式、或者不想采用设备本身的序列号，则可以使用FreeIOE提供的序列号生成功能，生成序列号。参考：
 
 ```lua
@@ -278,7 +280,7 @@ local dev_sn = self._sys:id()..self._name..'#1'
 
 ### 云配置获取
 
-云平台提供应用的云配置服务，可以存储应用配置、设备模板等文本信息。在应用中可以使用sys:conf_api来获取接口，从而从平台下载配置的内容。
+云平台提供应用的云配置服务，可以存储应用配置、设备模板等文本信息。从而在应用中可以使用sys:conf_api从平台获取这些数据。
 
 ```lua
 local api = self._sys:conf_api('TPL000000001')

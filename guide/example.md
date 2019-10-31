@@ -19,8 +19,8 @@ local class = require 'middleclass'
 
 --- 注册对象(请尽量使用唯一的标识字符串)
 local app = class("YOUR_APP_NAME_App")
---- 设定应用最小运行接口版本(目前版本为5,为了以后的接口兼容性)
-app.API_VER = 5
+--- 设定应用最小运行接口版本(目前版本为6,为了以后的接口兼容性)
+app.API_VER = 6
 
 ---
 -- 应用对象初始化函数
@@ -89,7 +89,7 @@ function app:run(tms)
 	return 10000 --单位是ms, 10000代表下一采集间隔为10秒。 等同于sleep(10000)
 end
 
---- 返回应用对象
+--- 返回应用对象(标准模块做法)
 return app
 ```
 
