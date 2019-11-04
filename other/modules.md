@@ -47,7 +47,8 @@
 | [summation](summation.md) | 累计计数模块(适用于网络使用量计算，涉及重启基数归零后的重置计算等等) |
 | [cov](cov.md) | 变化处理模块，可以用数据变化传输 |
 | ubus/ubox | ubus消息解析模块 |
-| restful | RestFul API模块(使用skynet http模块实现) |
+| http.restful | RestFul API模块(使用skynet http模块实现) |
+| http.download | HTTP 下载模块(使用skynet http模块实现) |
 
 
 ## utils(模块/目录)
