@@ -46,8 +46,6 @@ FreeIOE 提供的边缘计算接口
   * HTTP请求模块
   * 哈希算法模块
 
-图示：
-
 ![FreeIOE 软件结构](images/component.png)
 
 ## 技术社区
