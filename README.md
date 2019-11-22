@@ -38,11 +38,6 @@ FreeIOE基础介绍
 * [快速构建应用](guide/app_dev/with_base.md)
 * [注意事项](guide/app_dev/tips.md)
 
-### 应用示例集
-
-* [应用示例代码库 1](https://github.com/freeioe/freeioe_example_apps)
-* [应用示例代码库 2](https://github.com/viccom/myfreeioe_apps)
-
 ### 应用发布
 
 发布您的应用到应用中心，以便在设备中使用它
@@ -50,6 +45,11 @@ FreeIOE基础介绍
 * [申请账户](app_center/reg.md)
 * [应用打包](app_center/pack.md)
 * [版本上传](app_center/upload.md)
+
+### 应用示例集
+
+* [应用示例代码库 1](https://github.com/freeioe/freeioe_example_apps)
+* [应用示例代码库 2](https://github.com/viccom/myfreeioe_apps)
 
 ## 接口文档
 
