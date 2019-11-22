@@ -1,11 +1,9 @@
 ---
 
-## 应用开发
+## 开发引导
 
-* [应用简要](onestep.md)
-* [开发指南](tutorial.md)
-* [应用示例](example.md)
-* [注意事项](tips.md)
-* [应用示例代码库 1](https://github.com/freeioe/freeioe_example_apps)
-* [应用示例代码库 2](https://github.com/viccom/myfreeioe_apps)
-
+* [开发入门](intro.md)
+* [网关管理维护](using_gateway.md)
+* [开发环境搭建](dev_setup/README.md)
+* [发布应用](app_center/README.md)
+* [应用示例集](examples/README.md)
