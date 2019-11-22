@@ -3,16 +3,15 @@
 
 # 应用示例
 
-下面代码是一个简易的应用示例。其中展示了：
+本章展示了一个简单的数据采集的应用：
 
-1. 基本的应用框架
-2. 创建一个设备
-	* 包含一个输入项
-3. 使用随机数作为数据值
-4. 输出报文
+1. 满足 FreeIOE 应用框架的对接口的要求
+2. 创建一个虚拟设备模型
+   * 包含一个输入项
+3. 使用随机数作为数据值发布到虚拟设备模型上
+4. 输出报文（虚拟）
 
-
-## 示例代码：
+## 示例代码
 
 ```lua
 local class = require 'middleclass'
@@ -52,7 +51,7 @@ function app:start()
 		on_output = function(app, sn, output, prop, value, timestamp)
 		end,
 		on_command = function(app, sn, command, param)
-		end,	
+		end,
 		on_ctrl = function(app, command, param, ...)
 		end,
 	})
@@ -92,6 +91,3 @@ end
 --- 返回应用对象(标准模块做法)
 return app
 ```
-
-
-

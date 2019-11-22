@@ -9,7 +9,7 @@
 在开始进行设备通讯处理设备数据之前，需要创建设备模型以及设备实例。创建设备实例之后才能进行设备数据更新(发布)
 
 ```lua
-	--- 生成设备的序列号 
+	--- 生成设备的序列号
 	local dev_sn = "this_is_device_serial_number"
 	local meta = self._api:default_meta()
 	meta.name = "Modbus"
