@@ -5,7 +5,7 @@
 
 ***[FreeIOE](http://freeioe.org)*** 是一个[物联网](iot.md)边缘计算软件。该软件使设备能够收集和分析设备数据，自主应对本地事件，并可与本地网络上的其他服务进行交互。FreeIOE开发人员可以使用Lua语言和内置的一些功能模块来创建可部署到FreeIOE设备上的本地执行的应用程序。
 
-![arch](images/arch.png)
+![FreeIOE 部署](images/arch.png)
 
 FreeIOE 使客户能够构建IOT网关设备和边缘计算应用程序。具体来说，FreeIOE 对设备上运行的应用程序提供了在线的平台式远程管理。本地部署的应用程序可以进行设备通讯，数据计算处理，数据上送以及平台的互动等。
 
@@ -48,7 +48,7 @@ FreeIOE 提供的边缘计算接口
 
 图示：
 
-![FreeIOE 组成](images/component.png)
+![FreeIOE 软件结构](images/component.png)
 
 ## 技术社区
 
