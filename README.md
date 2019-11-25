@@ -24,7 +24,7 @@ FreeIOE基础介绍
 
 搭建开发环境
 
-* [注册开发者账户](guide/dev_setup/cloud_reg.md)
+* [注册开发者账户](guide/app_center/reg.md)
 * [虚拟机开发环境](guide/dev_setup/vbox.md)
 * [使用VSCode插件开发](guide/dev_setup/vscode-extension.md)
 * [Linux原生开发环境](guide/dev_setup/linux.md)
@@ -42,9 +42,11 @@ FreeIOE基础介绍
 
 发布您的应用到应用中心，以便在设备中使用它
 
-* [申请账户](app_center/reg.md)
+* [注册平台账户](app_center/reg.md)
+* [新建应用](app_center/new.md)
+* [克隆应用](app_center/fork.md)
 * [应用打包](app_center/pack.md)
-* [版本上传](app_center/upload.md)
+* [应用上传](app_center/upload.md)
 
 ### 应用示例集
 
