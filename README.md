@@ -55,6 +55,9 @@ FreeIOE给应用开发提供的接口列表
 
 ### 应用接口
 
+* [应用基础类模块](reference/app/base/README.md)
+  * [应用基础类](reference/app/base/init.md)
+  * [MQTT应用基础类](reference/app/base/mqtt.md)
 * [系统接口](reference/app/sys.md)
 * [基础接口](reference/app/api.md)
 * [设备对象](reference/app/device.md)
@@ -63,8 +66,6 @@ FreeIOE给应用开发提供的接口列表
 * [事件类型和等级](reference/app/event.md)
 * [云配置接口](reference/app/conf_api.md)
 * [云配置帮助接口](reference/app/conf_helper.md)
-* [基础应用封装模块](reference/app/base/init.md)
-* [MQTT应用封装模块](reference/app/base/mqtt.md)
 * 其他模块
   * [数据通讯模块](reference/app/port/README.md)
   * [工具类模块](reference/app/utils/README.md)
