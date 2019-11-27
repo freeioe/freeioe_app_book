@@ -1,12 +1,18 @@
 
 ---
 
-# 简易应用封装模块
-
+# 应用基础类模块
 
 本模块封装了应用的基础逻辑。帮助用户快速开发FreeIOE应用。
 
-示例: [示例应用](https://github.com/freeioe/freeioe_example_apps/blob/master/sample/app.lua)
+应用基础类提供了：
+
+* 使用 middleclass 构造了面向对象基础类
+* 实现了 FreeIOE 规定的接口函数
+* 在实现了的接口函数的回调，例如 initialize 函数会尝试回调 on_init函数
+* 封装了应用配置可视化 JSON 文件的解读，并将其实中的缺省值作为默认值传递给应用
+* 注册了系统的回调函数，并映射至应用自身的成员函数上
+* 提供数据计算的入口
 
 > *** API_VER: 5 ***
 
@@ -49,7 +55,6 @@
 
 获取已经生成的calc模块对象
 
-
 ## 模块数据对象成员列表
 
 * \_sys -- FreeIOE系统接口
@@ -59,10 +64,9 @@
 * \_log -- FreeIOE系统日志接口
 * \_calc -- FreeIOE系统提供的计算帮助对象,需要在on_init中使用create_calc初始化
 
-
 ## 如何使用此封装模块
 
-使用此封装模块时，只需要按需在应用对象里面实现自己需要的回调函数即可。模块会正确识别并向FreeIOE系统注册钩子函数。 
+使用此封装模块时，只需要按需在应用对象里面实现自己需要的回调函数即可。模块会正确识别并向FreeIOE系统注册钩子函数。
 
 ### 应用运行相关函数
 
@@ -74,7 +78,6 @@
   应用停止/推出函数回调
 * on_run (optional)
   周期运行回调函数
-
 
 ### 监听设备数据相关函数
 
@@ -104,7 +107,6 @@
 * on_event
   如果应用关注其他应用或系统产生的事件，那么请实现此函数
   > function app:on_event(src_app, device_sn, event_level, event_data, event_timestamp)
-
 
 ### 设备输出、指令相关函数
 
