@@ -71,15 +71,19 @@ table.insert(inputs, {
 
 ##### name
 
-输入项的名称，需要设备内唯一。
+输入项的名称，在本模型内不能重复，支持英文字母数字和下划线(_)。
 
 ##### desc
 
-输入项的描述信息。
+输入项的描述，建议使用简洁的描述信息。
 
-#### vt
+##### unit
 
-输入项发布数据的数值类型，可以是：
+输入项的数据的单位，是可选属性。
+
+##### vt
+
+输入项发布数据的数值类型。类型有：
 
 * float
   双精度浮点类型
@@ -88,28 +92,29 @@ table.insert(inputs, {
 * string
   字符串类型
 
-> 数据发布时，FreeIOE 会自动进行数据的验证以及转换，请务必设定为正确的数据类型，确保数据的一致性和严禁性。
+> 数据发布时，FreeIOE 会自动进行数据的验证以及转换，请务必填写正确的数据类型，确保数据的一致性和严禁性。
+> FreeIOE 没有 boolean 类型，请使用 int 类型来模拟。通常我们建议 0 代表 false, 1 代表 true
 
 #### 输出项(outputs)
 
-设备输出项是指设备具备可以对外输出的能力，模拟量输出、开关量输出、可调节输出电压等等。备输出项的设备，用户就可从而平台可以进行设备数据下置。
-
-> 其中下置的参数包含要输出的数据, 通常为字符串，应用需要自己做一下数据转换
+当设备具备的对外输出的能力，如模拟量输出、开关量输出、可调节输出电压等等。在模型中声明这些输出项，用户就可从而平台可以进行设备数据下置。
 
 ```lua
 local outputs = {}
 table.insert(outputs, {
-	name='Voutput1',
+	name='V_output1',
 	unit='V',
 	desc='输出电压',
 })
 ```
 
+> 如同输入项，指令集的名称也有在设备模型内唯一性的要求。
+> 通常用户通过平台下置的数据数值为字符串，应用需要进行数据验证和合理的类型转换。
+
 #### 指令集(commands)
 
-当设备支持的执行一些动作指令，如开启，停止，暂停，可以在设备模型中声明这些动作指令。
+当设备支持的执行一些动作指令，如开启，停止，暂停，可以在设备模型中声明这些动作指令。 从而用户可以从平台发送设备指令请求。
 
-> 平台在下发指令时附带一个param的数据结构，在lua里面是一个table的对象。 不过FreeIOE并不会进行参数转换以及验证的工作，应用需要正确处理传入的参数的严禁性以及合法性验证。
 
 ```lua
 local commands = {}
@@ -119,21 +124,24 @@ table.insert(commands, {
 })
 ```
 
+> 如同输入项，指令集的名称也有在设备模型内唯一性的要求。
+> 平台在下发指令时附带一个param的数据结构，在lua里面是一个table的对象。 如同输出项下置一样，应用需要正确处理传入的参数的数据验证和合理的数据类型转换。
+
 ## 发布设备数据
 
-当通过设备通讯协议收到设备数据项的新的数值后，请使用下面接口进行设备数据发布:
+当应用通过设备通讯协议，收到设备数据项的新的数值后，请使用下面接口进行设备数据发布:
 
 ```lua
 dev:set_input_prop('Va', "value", val, now, 0)
 ```
 
 其中：
-val 为协议中解析出来的具体数据，类型请保持和模型声明中的vt一致
-now 是数据的时间戳，如协议中没有时间戳（如modbus），请使用 FreeIOE 提供的系统时间
+val 为协议中解析出来的具体数据，其数据类型请和模型声明中的数据类型(vt)保持一致
+now 是数据的时间戳，如协议中没有时间戳（如 modbus），请使用 FreeIOE 提供的系统时间
 
 ## 发布紧急数据
 
-设备紧急数据是一种需要 FreeIOE 尽快将之传输至平台的设备数据。
+设备紧急数据是一种需要 FreeIOE 尽快将之传输至平台的设备数据。从而平台能够将此数据尽快的推送给用户，让用户尽快执行某种策略。
 
 发布紧急数据的调用:
 
@@ -146,27 +154,17 @@ dev:set_input_prop_emergency('Va', "value", val, now, 0)
 
 ## 发布通讯报文
 
-当应用支持平台查看通讯报文时，需要使用此通讯报文发布接口。
+当应用支持用户在平台查看通讯报文，并根据报文诊断现场设备通讯时，可以使用此通讯报文发布接口。
 
 ```lua
---- 设定通讯口数据回调
-client:set_io_cb(function(io, msg)
-	--- 输出通讯报文
-	dev:dump_comm(io, msg)
-	--- 计算统计信息
-	if io == 'IN' then
-		stat:inc('bytes_in', string.len(msg))
-	else
-		stat:inc('bytes_out', string.len(msg))
-	end
-end)
+dev:dump_comm('IN', msg)
 ```
 
-详细使用可以参考应用示例库中的/modbus/master应用。
+其中第一个参数通常为方向性指示标志，如 IN OUT 等。 FreeIOE 并未限制这个参数，但是也请勿使用过长的描述性信息。
 
 ## 发布通讯统计
 
-通讯统计信息，如接收包数，发送包数，接收字节数，发送字节数等等。
+设备统计信息，如连接状态，通讯接收包数，通讯发送包数，通讯接收字节数，通讯发送字节数等等。
 
 统计类型：
 
@@ -180,123 +178,68 @@ end)
 * bytes_out
 * bytes_error
 
-
 ```lua
 stat:inc('packets_in', 1)
 ```
 
 ## 输出应用日志
 
+应用应该具备必要的日志信息，能够帮助客户理解应用的工作状态，以及获取错误、警告等信息。
+
 参考[日志接口](../../../reference/app/logger.md)
 
 ```lua
 self._log:trace("read input registers done!")
-self._log:trace("Got err:", err, "more", "log content", here)
+self._log:warning("Got err:", err, "more", "log content", here)
 ```
 
-## 其他
+### 响应数据下置
 
-### 云配置获取
-
-云平台提供应用的云配置服务，可以存储应用配置、设备模板等文本信息。从而在应用中可以使用sys:conf_api从平台获取这些数据。
+当平台的设备输出请求到达网关后，此数据输出处理函数就会被调用。使用 app.base 作为应用基础类时，需要声明：
 
 ```lua
-local api = self._sys:conf_api('TPL000000001')
-local ver = api:version()
-
-local str = api:data(ver)
-
--- If template is cjson format
-local conf = cjson.decode(str)
-
--- If template is csv
-local conf = ftcsv.parse(str)
-```
-
-### 响应输出(数据下置)
-
-在api:set_handler的处理对象中增加下面的处理函数。当平台的设备输出请求到达网关后，此处理函数就会被调用。
-
-```lua
---- 处理设备输出项数值变更消息
--- @param app 应用对象实体
+--- 处理设备输出项的数据下置请求
+-- @param app_src 请求来源应用的实例名
 -- @param sn 目标设备序列号
 -- @param output 输出项名称
 -- @param prop 输出项属性(默认为value)
 -- @param value 输出数值
 -- @param timestamp 数据源的时间戳，选项数据，可用于校验下置数据是否超过了时效。
-on_output = function(app, sn, output, prop, value, timestamp)
-	-- You code here
-end,
+function app:on_output(app_src, sn, output, prop, value, timestamp)
+	-- 设备数据下置代码实现
+end
 ```
 
-本函数需要正确反馈执行结果，执行成功返回true, 失败返回false, \<error\>。FreeIOE会自动汇报执行结果到云平台。 此函数可以进行sleep, yield操作。
+本函数需要正确返回执行结果：执行成功返回true, 失败返回false, \<error\>。此函数可以进行sleep, yield操作。
 
 ### 响应指令
 
-在api:set_handler的处理对象中增加下面的处理函数。当平台的设备指令请求到达网关后，此处理函数就会被调用。
+当平台的设备指令请求到达网关后，此指令处理函数就会被调用。使用 app.base 作为应用基础类事，需要声明：
 
 ```lua
---- 处理设备指令消息
--- @param app 应用对象实体
+--- 处理设备指令执行请求
+-- @param app_src 请求来源应用的实例名
 -- @param sn 目标设备序列号
 -- @param command 指令名称
 -- @param param 参数(可以是数值，字符串，table)
-on_command = function(app, sn, command, param)
-	-- You code here
+function app:on_command(app_src, sn, command, param)
+	-- 设备指令执行代码实现
 end,
 ```
 
 本函数如同on_output一样，需要正确返回执行结果。 也可以进行sleep, yield等操作。
-
 
 ### 发布设备事件
 
 当设备/应用出现异常，或者任何其他需要通知用户的事件信息，可以通过设备的事件接口发布。
 
 ```lua
-	local event = require 'app.event'
-	local info = "/tmp disk is nearly full!!!"
-	dev:fire_event(event.LEVEL_ERROR, event.EVENT_SYS, info, {used=10000000, free=0})
+local event = require 'app.event'
+local info = "/tmp disk is nearly full!!!"
+dev:fire_event(event.LEVEL_ERROR, event.EVENT_SYS, info, {used=10000000, free=0})
 ```
 
 注意请勿频繁调用此接口，建议记录事件发布的时间，确保应用不会无限制的循环发布事件。虽然FreeIOE内置了事件发布的次数限制（20条/分钟)，但是强烈建议应用设定事件发布限制。
-
-
-## 设备通讯
-
-### TCP 套接字
-
-FreeIOE框架提供TCP Socket连接有以下几种方式:
-
-1. [SocketChannel](https://github.com/cloudwu/skynet/wiki/socketchannel) <br>
-Skynet 框架提供的TCP Socket通讯框架。有两种工作模式:<br>
-    * 同步模式
-    * 异步模式(需要协议支持Session)
-2. [app.socket](../app/socket.md)<br>
-FreeIOE 封装的简易TCP Socket模式。
-3. [Skynet Socket模块](https://github.com/cloudwu/skynet/wiki/socket)
-
-参考示例应用库中的/modbus/master /modbus/slave /modbus/gateway 以及 /other/dtu 和 /example/serial_socket应用
-
-
-### 串口通讯
-
-FreeIOE 集成了 [librs232](http://github.com/srdgame/librs232) 模块，支持用户访问串口设备。
-
-1. SerialChannel<br>
-同SocketChannel模式的通讯框架
-2. [app.serial](../app/serial.md)<br>
-FreeIOE 封装的建议串口模块
-3. [rs232](https://github.com/srdgame/librs232/blob/master/bindings/lua/rs232.lua)<br>
-直接使用librs232模块
-
-参考示例应用库中的modbus应用，以及 /other/dtu 和 /other/oliver_355_monitor、example/serial 等应用。
-
-
-### UDP 套接字
-
-详见 Skynet Socket模块的说明。 并且FreeIOE扩展了Socket中的sendto函数，除了原本的sendto(id, from, data)之外，支持sendto(id, ip, port, data)方式直接指定发送目标的IP和端口信息。
 
 ## 示例代码
 
