@@ -3,7 +3,7 @@
 
 # 使用 VS Code 开发应用
 
-VS Code 是微软开发提供的一款非常灵活的编辑器软件。 我们提供了 VS Code的插件，让开发者可以方便快速的进行 FreeIOE 应用开发和调试。
+VS Code 是微软开发提供的一款非常灵活的编辑器软件。 FreeIOE 提供了 VS Code的插件，让开发者可以方便快速的进行应用开发和调试。
 
 ![IOT Editor](assets/vscode_arch.png)
 

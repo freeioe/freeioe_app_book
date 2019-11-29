@@ -21,8 +21,8 @@ FreeIOE基础介绍
 
 ### 环境搭建
 
-* [使用网关产品](guide/dev_setup/bind_gateway.md)
-* [使用虚拟网关](guide/dev_setup/vbox.md)
+* [使用网关产品](guide/dev_setup/gateway.md)
+* [使用虚拟网关](guide/dev_setup/gateway_vbox.md)
 * [使用VSCode插件开发](guide/dev_setup/vscode-extension.md)
 * [其他应用开发方式](guide/dev_setup/other.md)
 
