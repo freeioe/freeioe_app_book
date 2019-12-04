@@ -1,19 +1,20 @@
 
 ---
 
-# 数据上云
+# 边缘计算
 
-此章将介绍如何开发一个数据上云的应用。您将学习到如何使用 MQTT 协议将 FreeIOE 内的设备数据送到云平台。
+此章将介绍如何开发一个边缘计算应用。此应用将根据其他应用采集到的设备数据，根据数据的当前值，来触发一个自动化控制策略。
 
-## 什么是 MQTT 协议
+## 要实现什么？
 
-MQTT 是物联网云平台常见的一种对接协议，更多内容可以访问 [MQTT 协议简介](https://wiki.freeioe.org/doku.php?id=mqtt:start)
+我们假设的场景是：
 
-![数据上云应用](images/mqtt_cloud.png)
+1. 当温度传感器数据超过40度时，打开一个 DO 输出项（驱动风扇开关）
+2. 当温度传感器数据降低到30度时，关闭 DO 输出
 
-## 构造 MQTT 上云应用
+## 构造边缘计算应用
 
-FreeIOE 提供了 MQTT 上云类应用的基础模块，本章将基于此模块来构建应用。 [手册](../../../reference/app/base/mqtt.md)
+FreeIOE 提供的应用基础类模块，提供了进行边缘计算的接口和功能。本章将基于此模块来构建应用。 [手册](../../../reference/app/base/mqtt.md)
 
 ```lua
 local mqtt_base = require 'app.base.mqtt'
