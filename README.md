@@ -75,6 +75,14 @@ FreeIOE给应用开发提供的接口列表
   * [数据通讯模块](reference/app/port/README.md)
   * [工具类模块](reference/app/utils/README.md)
 
+### 系统服务接口
+
+* [配置服务](reference/services/cfg.md)
+* [软件分发服务](reference/services/upgrader.md)
+* [扩展管理服务](reference/services/ioe_ext.md)
+* [应用管理服务](reference/services/appmgr.md)
+* [缓存服务](reference/services/buffer.md)
+
 ### 其它资料 & 文档
 
 其它有关的资料索引
