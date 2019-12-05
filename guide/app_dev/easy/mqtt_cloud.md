@@ -17,9 +17,9 @@ FreeIOE 提供了 MQTT 上云类应用的基础模块，本章将基于此模块
 
 ```lua
 local mqtt_base = require 'app.base.mqtt'
-app.static.API_VER = 5
 
 local app = mqtt_base:subclass('EXAMPLE_MQTT_APP_IN_GUIDE')
+app.static.API_VER = 5
 ```
 
 ## 连接认证
