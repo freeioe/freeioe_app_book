@@ -10,33 +10,13 @@
 应用基础类提供了：
 
 * 使用 middleclass 构造了面向对象基础类
-* 实现了 FreeIOE 规定的接口函数
+* 实现了 FreeIOE 应用必备的接口函数
 * 在实现了的接口函数的回调，例如 initialize 函数会尝试回调 on_init函数
 * 封装了应用配置可视化 JSON 文件的解读，并将其实中的缺省值作为默认值传递给应用
 * 注册了系统的回调函数，并映射至应用自身的成员函数上
 * 提供数据计算的入口
 
-
-## 模块实现的函数
-
-### initialize
-> function app:initialize(name, sys, conf)
->
-
-提供了默认的应用构造函数， 并在此函数最后调用on_init函数
-
-### start
-
-提供默认的应用启动函数，并在此函数最后调用on_start函数
-
-### close
-
-提供默认的应用停止函数，并在此函数最后调用on_close函数
-
-### run
-
-提供默认的应用运行函数，如应用提供了on_run函数，则会使用on_run的函数逻辑
-
+## 成员函数
 
 ### gen_sn
 > function app:gen_sn(key)
@@ -56,7 +36,7 @@
 
 获取已经生成的calc模块对象
 
-## 模块数据对象成员列表
+## 成员对象
 
 * \_sys -- FreeIOE系统接口
 * \_name -- 应用实例名称
@@ -65,7 +45,7 @@
 * \_log -- FreeIOE系统日志接口
 * \_calc -- FreeIOE系统提供的计算帮助对象,需要在on_init中使用create_calc初始化
 
-## 如何使用此封装模块
+## 如何使用
 
 使用此封装模块时，只需要按需在应用对象里面实现自己需要的回调函数即可。模块会正确识别并向FreeIOE系统注册钩子函数。
 
@@ -89,7 +69,7 @@
   > function app:on_add_device(src_app, sn, props)
 * on_mod_device
   如果需要关注其他应用注册的设备模型，那么可以实现次函数。基础类在接受模型注册消息时会调用此函数
- > function app:on_mod_device(src_app, sn, props)
+  > function app:on_mod_device(src_app, sn, props)
 * on_del_device
   如果需要关注其他应用注册的设备模型，那么可以实现次函数。基础类在接受模型注册消息时会调用此函数
   > function app:on_del_device(src_app, sn)

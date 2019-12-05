@@ -1,6 +1,12 @@
 
 ---
 
+# 从零构造应用
+
+了解了应用本质后，我们着手构造一个不依赖于 FreeIOE 提供的应用基础类的应用。
+
+本章使用了第三方的模块 [middleclass](https://github.com/kikito/middleclass/wiki) 来构造应用模块。如果您对完全的手工构造应用模块感兴趣，请[参考](http://lua-users.org/wiki/ObjectOrientationTutorial)。
+
 ## 声明应用模块
 
 在实现模块函数前，我们需要进行模块对象声明(definition)
@@ -13,8 +19,8 @@ local app = class('THIS_IS_AN_EXAMPLE_APP_FOR_FREEIOE')
 app.static.API_VER = 6
 ```
 
-**注意:**
-**API_VER** 是标识当前应用运行的最低 API 版本号需求。当 FreeIOE 无法满足这个版本需求时，将不会尝试启动该应用，避免由于接口不兼容性导致的未知为题。
+注意:
+**API_VER** 是标识当前应用运行的最低 API 版本号需求。当 FreeIOE 无法满足这个版本需求时，将不会尝试启动该应用，避免由于接口不兼容性导致的未知问题。
 
 > 参考 API Reference获取接口以及其接口版本号要求等信息
 
@@ -22,14 +28,14 @@ app.static.API_VER = 6
 
 模块需要实现的函数只有极少的数量，列表如下：
 
-1. 模块对象构建函数<br>
-> initialize(name, sys, conf)
-2. 应用实例启动函数<br>
-> start()
-3. 应用实例停止/退出函数<br>
-> close(reason)
-4. 应用逻辑运行函数 (可选)<br>
-> run(time_in_ms)
+1. 模块对象构建函数
+   initialize(name, sys, conf)
+2. 应用实例启动函数
+   start()
+3. 应用实例停止/退出函数
+   close(reason)
+4. 应用逻辑运行函数 (可选)
+   run(time_in_ms)
 
 ### 函数详细说明
 
@@ -73,4 +79,3 @@ app.static.API_VER = 6
     * 返回下一次调用次函数的时间间隔（单位是毫秒)。
   * 用途
     * 当应用有此接口，框架会周期调用此函数。周期间隔时间取决于本函数的返回值
-
