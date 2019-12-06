@@ -12,9 +12,8 @@
 
 示例: [示例应用](https://github.com/freeioe/freeioe_example_apps/blob/master/opcua/yizumi)
 
-## 模块函数
 
-### 模块初始化
+## initialize
 
 #### 函数原型
 
@@ -42,7 +41,9 @@ local concat = app_concat:new(function(values)
 end, true, 200)
 ```
 
-### 增加数据项
+## add
+
+增加数据项
 
 #### 函数原型
 
@@ -68,7 +69,9 @@ concat:add('temp1')
 concat:add('temp2')
 ```
 
-### 更新单个数据
+## update
+
+更新单个数据项的数据
 
 #### 函数原型
 
@@ -87,7 +90,7 @@ function concat:update(key, value, timestamp, quality)
 * quality
   质量戳
 
-### 主动触发一次回调
+## 主动触发一次回调
 
 触发计算回调，一般使用情况下，无需主动使用此函数。
 

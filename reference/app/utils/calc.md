@@ -11,9 +11,9 @@
 2. 确保当数据变化时，才进行计算
 3. 支持周期性回调
 
-## 模块函数
+## initialize
 
-### 模块实例构造函数
+模块实例构造函数
 
 #### 函数原型
 
@@ -38,7 +38,9 @@ local app_calc = require 'app.utils.calc'
 local calc = app_calc:new(self._sys, self._api, self._logger)
 ```
 
-### 增加交叉计算单元
+## add
+
+增加交叉计算单元
 
 #### 函数原型
 
@@ -71,7 +73,9 @@ calc:add('example_calc_unit', inputs, function(Va, Vb)
 end)
 ```
 
-### 增加交叉计算单元
+## remove
+
+删除交叉计算单元
 
 #### 函数原型
 
@@ -92,7 +96,7 @@ function calc:remove(name)
 calc:remove('example_calc_unit')
 ```
 
-### 启动计算单元
+## start
 
 添加计算单元后，应该调用此方法，让模块背后的逻辑启动运行。
 
@@ -104,7 +108,7 @@ function calc:start(handler)
 
 启动计算单元，handler是应用调用api:set_handler时使用的对象。
 
-### 停止计算单元
+## stop
 
 停止计算单元后，所有添加的计算单元将不再被执行。
 
