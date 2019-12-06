@@ -90,9 +90,9 @@ function concat:update(key, value, timestamp, quality)
 * quality
   质量戳
 
-## 主动触发一次回调
+## call_calc
 
-触发计算回调，一般使用情况下，无需主动使用此函数。
+主动触发计算回调，一般使用情况下，无需主动使用此函数。
 
 #### 函数原型
 
