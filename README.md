@@ -49,11 +49,6 @@ FreeIOE基础介绍
 * [应用打包](app_center/pack.md)
 * [应用上传](app_center/upload.md)
 
-### 应用示例集
-
-* [应用示例代码库 1](https://github.com/freeioe/freeioe_example_apps)
-* [应用示例代码库 2](https://github.com/viccom/myfreeioe_apps)
-
 ## 接口文档
 
 FreeIOE给应用开发提供的接口列表
