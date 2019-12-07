@@ -3,7 +3,35 @@
 
 # Lua模块
 
-## FreeIOE内置的模块(第三方)：
+## 内置模块：
+
+| 模块 | 说明 |
+| :--- | :--- |
+| ioe | FreeIOE设备信息获取、设定 |
+| [serialdriver](serialdriver.md) | 串口模块librs232轻度封装模块 |
+| [serialchannel](serialchannel.md) | 接口模式同SocketChannel，区别是串口通道只支持SocketChannel中的模式1(即一问一答模式) |
+| [cyclebuffer](buffer/cycle.md) | 循环缓存模块(设定最大缓存条目后，会自动丢弃最老数据) |
+| [periodbuffer](buffer/period.md) | 批次数据整理模块 |
+| [summation](summation.md) | 累计计数模块(适用于网络使用量计算，涉及重启基数归零后的重置计算等等) |
+| [cov](cov.md) | 变化处理模块，可以用数据变化传输 |
+| ubus/ubox | ubus消息解析模块 |
+| http.restful | RestFul API模块(使用skynet http模块实现) |
+| http.download | HTTP 下载模块(使用skynet http模块实现) |
+
+## utils模块
+
+| 模块 | 说明 |
+| :--- | :--- |
+| gcom | 调用gcom脚本获取信号强度，SIM卡信息等 |
+| [leds](utils/leds.md) | 控制设备led灯 |
+| [gpios](utils/gpios.md) | 控制设备GPIO输出 |
+| log | 日志模块(使用lua-log模块实现) |
+| process_monitor | 调用process monitor监控运行其他进程 |
+| services | 使用系统(Linux) 服务来监控运行其他进程 |
+| retry | 限制次数的自动重试 |
+| [sysinfo](utils/sysinfo.md) | 系统信息获取帮助模块 |
+
+## 内置的第三方模块
 
 | 模块 | 说明|
 | :--- | :--- |
@@ -35,37 +63,7 @@
 | [Tieske/uuid](https://github.com/Tieske/uuid) | 纯Lua实现的UUID模块 |
 | [moteus/lua-log](https://github.com/moteus/lua-log) | 异步日志模块 |
 
-## FreeIOE 提供的模块：
-
-| 模块 | 说明 |
-| :--- | :--- |
-| ioe | FreeIOE设备信息获取、设定 |
-| [serialdriver](serialdriver.md) | 串口模块librs232轻度封装模块 |
-| [serialchannel](serialchannel.md) | 接口模式同SocketChannel，区别是串口通道只支持SocketChannel中的模式1(即一问一答模式) |
-| [cyclebuffer](buffer/cycle.md) | 循环缓存模块(设定最大缓存条目后，会自动丢弃最老数据) |
-| [periodbuffer](buffer/period.md) | 批次数据整理模块 |
-| [summation](summation.md) | 累计计数模块(适用于网络使用量计算，涉及重启基数归零后的重置计算等等) |
-| [cov](cov.md) | 变化处理模块，可以用数据变化传输 |
-| ubus/ubox | ubus消息解析模块 |
-| http.restful | RestFul API模块(使用skynet http模块实现) |
-| http.download | HTTP 下载模块(使用skynet http模块实现) |
-
-
-## utils(模块/目录)
-
-| 模块 | 说明 |
-| :--- | :--- |
-| gcom | 调用gcom脚本获取信号强度，SIM卡信息等 |
-| [leds](utils/leds.md) | 控制设备led灯 |
-| [gpios](utils/gpios.md) | 控制设备GPIO输出 |
-| log | 日志模块(使用lua-log模块实现) |
-| process_monitor | 调用process monitor监控运行其他进程 |
-| services | 使用系统(Linux) 服务来监控运行其他进程 |
-| retry | 限制次数的自动重试 |
-| [sysinfo](utils/sysinfo.md) | 系统信息获取帮助模块 |
-
-
-## 非集成扩展模块
+## 二进制扩展模块
 
 | 名称 | 地址 | 说明 |
 | :--- | :--- | :--- |
@@ -73,7 +71,6 @@
 | snap7 | [lua-snap7](https://github.com/srdgame/lua-snap7) | Snap7协议库的Lua扩展模块(Siemens PLC) |
 | plctag | [libplctag](https://github.com/srdgame/libplctag) | Allen-Bradley PLC 协议库的Lua扩展模块 |
 
-
-> 可以从[这里](https://github.com/freeioe/freeioe_prebuild_exts) 获取二进制文件  
-> 如何在FreeIOE应用中使用非集成模块，[参考](https://github.com/freeioe/freeioe_example_apps/blob/master/opcua_client/depends.txt)  
-> 
+> 可以从[这里](https://github.com/freeioe/freeioe_prebuild_exts) 获取二进制文件
+> 如何在FreeIOE应用中使用非集成模块，[参考](https://github.com/freeioe/freeioe_example_apps/blob/master/opcua_client/depends.txt) 
+>

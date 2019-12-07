@@ -15,11 +15,8 @@
 	* [中文版](http://book.luaer.cn/)
 	* [英文版](http://www.lua.org/pil/contents.html)
 
-
 ## Lua Users 网站在线资料：
 
 1. Lua学习: [LearningLua](http://lua-users.org/wiki/LearningLua)
 2. 示例代码: [SampleCode](http://lua-users.org/wiki/SampleCode)
 3. 模块指南: [ModulesTutorial](http://lua-users.org/wiki/ModulesTutorial)
-
-

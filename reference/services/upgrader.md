@@ -82,4 +82,3 @@ local args = {
 local action_id = 'this_is_an_example_unique_id'
 local r, err = skynet.call(".upgrader", "lua", "uninstall_app", action_id, args)
 ```
-
