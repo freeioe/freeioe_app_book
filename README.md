@@ -96,4 +96,3 @@ FreeIOE给应用开发提供的接口列表
   * [gpios模块](reference/other/utils/gpios.md)
   * [sysinfo模块](reference/other/utils/sysinfo.md)
   * [周期计时模块](reference/other/utils/timer.md)
-
