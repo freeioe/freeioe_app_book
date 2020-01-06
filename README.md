@@ -36,6 +36,7 @@ FreeIOE基础介绍
 * [深入理解应用](guide/app_dev/advance/README.md)
   * [应用本质](guide/app_dev/advance/app_module.md)
   * [从零构造](guide/app_dev/advance/from_zero.md)
+  * [应用配置可视化](guide/app_dev/advance/conf_visual.md)
 * [注意事项](guide/app_dev/tips.md)
 * [应用示例](guide/app_dev/examples.md)
 
