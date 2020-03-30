@@ -38,7 +38,7 @@ end
 
 ## get_input_prop
 
-获取设备输入项的当前值。
+获取设备输入项的当前值。 
 
 ### 函数原型
 
@@ -46,6 +46,13 @@ end
 function device:get_input_prop(input, prop)
 end
 ```
+
+### 示例
+
+```lua
+local value, timestamp, quality = dev:get_input_prop('tag1', 'value')
+```
+
 
 ### 参数说明
 

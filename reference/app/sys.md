@@ -50,7 +50,7 @@ sn是应用创建的设备序列号/为空时代表设备无关报文。参考[d
 
 ## fire_event
 
-记录应用事件。 
+记录应用事件。
 
 ```lua
 function sys:fire_event(sn, level, type, info, data, timestamp)
@@ -85,7 +85,7 @@ end
 
 ```lua
 sys:fork(function(a)
-	print(a)
+    print(a)
 end, 1)
 ```
 

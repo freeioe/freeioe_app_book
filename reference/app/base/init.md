@@ -5,12 +5,12 @@
 
 > ***API_VER: 5***
 
-本模块封装了应用的基础逻辑。帮助用户快速开发FreeIOE应用。
+本模块封装了应用的一些基础的共用的逻辑实现。帮助用户避免在一些基础操作上花费时间。
 
 应用基础类提供了：
 
-* 使用 middleclass 构造了面向对象基础类
-* 实现了 FreeIOE 应用必备的接口函数
+* 使用 [middleclass](https://github.com/kikito/middleclass/wiki) 构造了面向对象基础类，具备可继承的特性。
+* 实现了 FreeIOE 应用应必备的接口函数
 * 在实现了的接口函数的回调，例如 initialize 函数会尝试回调 on_init函数
 * 封装了应用配置可视化 JSON 文件的解读，并将其实中的缺省值作为默认值传递给应用
 * 注册了系统的回调函数，并映射至应用自身的成员函数上
@@ -20,50 +20,55 @@
 
 ## gen_sn
 
+
+使用网关内唯一的关键字(key)生成哈希字符串，并叠加上网关序列号，来生成全局唯一设备序列号。序列号格式如为: ```<gateway_sn>.<hashed_key_string>```
+
 ```lua
 function app:gen_sn(key)
+    -- Implementation
 end
 ```
 
-使用唯一的key（网关内唯一），叠加网关序列号来生成全局（全平台）唯一设备序列号 格式: <gateway_sn>.<hashed_key_string>
-
 ## create_calc
 
-生成并返回一个```app.utils.calc``` 模块对象，并赋值到 ```self._calc```。 封装模块会正确处理这个对象的初始化以及销毁工作。注意本函数只能在on_init回调里面使用，才能保证正常工作。
+创建数据计算模块，返回一个```app.utils.calc``` 模块对象，并赋值到成员变量 ```self._calc```。 封装模块会正确处理这个对象的初始化以及销毁工作。注意本函数只能在on_init回调里面使用，才能保证正常工作。
 
 ```lua
 function app:create_calc()
+    -- Implementation
 end
 ```
 
 ## get_calc
 
-获取已经生成的calc模块对象
+获取已经生成的数据计算模块对象。
 
 ```lua
 function app:get_calc()
+    return self._calc
+end
 ```
 
 # 成员对象
 
 * \_sys
-  FreeIOE 系统接口
+  自 FreeIOE 构造应用势力传入的接口对象
 * \_name
-  应用实例名称
+  自 FreeIOE 构造应用势力传入的应用示例名称
 * \_conf
-  应用配置数据对象
+  自 FreeIOE 构造应用势力传入的应用配置数据对象
 * \_api
-  FreeIOE 系统数据接口
+  FreeIOE 系统数据接口，由 ``` sys:data_api ``` 生成而来
 * \_log
-  FreeIOE 系统日志接口
+  FreeIOE 系统日志接口，由 ``` sys:logger ``` 生成而来
 * \_calc
-  FreeIOE系统提供的计算帮助对象,需要在on_init中使用create_calc初始化
+  FreeIOE 系统提供的计算帮助对象,需要在 on_init 中使用 create_calc 初始化后，此成员才会被赋值
 
 # 如何使用
 
-使用此封装模块时，只需要按需在应用对象里面实现自己需要的回调函数即可。模块会正确识别并向FreeIOE系统注册钩子函数。
+使用此封装模块后，只需按需在实现回调函数即可。本模块会检测这些回调函数，并完成对应的初始化工作，如向FreeIOE系统注册必要钩子函数。
 
-## 应用运行相关函数
+## 应用运行相关回调函数
 
 * on_init
   应用构造回调函数，当你需要在应用构造做一些处理，则实现这个函数。
@@ -71,10 +76,10 @@ function app:get_calc()
   应用启动回调，实现您应用自身逻辑的函数
 * on_close
   应用停止/推出函数回调
-* on_run (optional)
+* on_run
   周期运行回调函数
 
-## 监听设备数据相关函数
+## 监听设备数据相关回调函数
 
 如需处理设备数据(其他应用获取的设备数据），如实现数据上送、数据计算等，则需在基于本模块派生的应用模块里面实现以下函数
 
@@ -119,7 +124,7 @@ function app:get_calc()
   function app:on_event(src_app, device_sn, event_level, event_data, event_timestamp)
   ```
 
-## 设备输出、指令相关函数
+## 设备输出、指令相关回调函数
 
 * on_output
   设备数据下置请求函数，如支持下置数据到设备。注册设备模型包含有下置数据的信息，然后在此函数实现设备数据下置。
@@ -132,7 +137,7 @@ function app:get_calc()
   function app:on_command(src_app, sn, command, params)
   ```
 
-## 应用控制交互函数
+## 应用控制交互回调函数
 
 * on_ctrl
   应用之间可以进行一些非设备模型依赖的数据交换，行为控制。实现此函数可接收来自其他应用的请求，参考: ```app.api.send_ctrl```
@@ -140,7 +145,7 @@ function app:get_calc()
   function app:on_ctrl(src_app, command, param)
   ```
 
-## 设备输出、指令以及应用控制交互结果函数
+## 设备输出、指令以及应用控制交互结果回调函数
 
 * on_output_result
   如果应用请求了其他应用创建的设备模型中的数据下置，该数据下置被其他应用执行后，FreeIOE 会将结果传递给此函数
