@@ -1,4 +1,5 @@
 
+
 ----
 
 # 应用基础接口
@@ -31,20 +32,56 @@ api:set_handler({
 	on_comm = function(src_app, dev_sn, dir, timestamp, ...) end, -- watch_data = true
 	on_stat = function(src_app, dev_sn, state, prop, value, timestamp) end, -- watch_data = true
 	on_input = function(src_app, dev_sn, input, prop, value, timestamp, quality) end, -- watch_data = true
+	on_input_batch = function(src_app, dev_sn, datas) end, -- 批量输入数据回调
+	on_input_em = function(src_app, dev_sn, input, prop, value, timestamp, quality) end, -- 紧急输入数据回调
 	on_add_device = function(src_app, dev_sn, props) end, -- watch_data = true
 	on_del_device = function(src_app, dev_sn, props) end, -- watch_data = true
-	on_mod_device = function(src_app, dev_sn) end, -- watch_data = true
+	on_mod_device = function(src_app, dev_sn, props) end, -- watch_data = true
 	on_output = function(src_app, dev_sn, output, prop, value, timestamp) end, -- 数据输出项回调
 	on_output_result = function(src_app, priv, result, err) end, -- 数据输出项请求执行结果回调
 	on_command = function(src_app, dev_sn, command, params) end, -- 命令回调
 	on_command_result = function(src_app, priv, result, err) end, -- 命令请求执行结果回调
 	on_ctrl = function(src_app, command, params) end, -- 应用控制接口
 	on_ctrl_result = function(src_app, priv, result, err) end, -- 应用控制执行结果回调
+	on_event = function(src_app, dev_sn, level, type_, info, data, timestamp) end, -- 事件回调
 })
 ```
 
 > *** API_VER: 5 ***
 > API_VER 5支持了 on_output_result 和 on_command_result接口
+
+## initialize
+
+初始化API实例
+
+> *** API_VER: 4 ***
+
+### 函数原型
+
+```lua
+function api:initialize(app_name, mgr_snax, logger)
+end
+```
+
+### 参数说明
+
+* app_name
+  应用名称
+* mgr_snax
+  应用管理服务句柄（可选，默认自动查询）
+* logger
+  日志实例（可选，默认创建新实例）
+
+## cleanup
+
+接口清理接口（sys接口清理时，会自动调用此接口）
+
+### 函数原型
+
+```lua
+function api:cleanup()
+end
+```
 
 ## list_devices
 
@@ -53,15 +90,40 @@ api:set_handler({
 ### 函数原型
 
 ```lua
-function api:list_devices()
+function api:list_devices(with_data)
 end
 ```
+
+### 参数说明
+
+* with_data
+  是否包含当前输入输出数据值（可选，默认false）
+
+### 返回值
+
+返回设备信息表，如果with_data为true则包含当前数据
+
+## default_meta
+
+获取默认设备元数据模板
+
+### 函数原型
+
+```lua
+function api:default_meta()
+end
+```
+
+### 返回值
+
+返回包含默认设备元数据字段的表
 
 ## add_device
 
 创建新的采集设备对象。返回设备对象实例（参考[设备API](device.md))。
 
 ### 函数原型
+
 ```lua
 function api:add_device(sn, meta, inputs, outputs, commands)
 end
@@ -128,6 +190,10 @@ function api:get_device(sn, secret)
 end
 ```
 
+### 返回值
+
+返回设备对象，或nil和错误消息
+
 ## send_ctrl
 
 发送应用控制指令。 会调用应用设定的handler.on_ctrl。 如需跟踪结果需要设定on_ctrl_result处理函数
@@ -135,24 +201,24 @@ end
 ### 函数原型
 
 ```lua
-function api:send_ctrl(app, ctrl, params)
+function api:send_ctrl(app, ctrl, params, priv)
 end
 ```
 
-## cleanup
+### 参数说明
 
-接口清理接口（sys接口清理时，会自动调用此接口）
-
-### 函数原型
-
-```lua
-function api:cleanup()
-end
-```
+* app
+  目标应用名称
+* ctrl
+  控制命令类型
+* params
+  命令参数
+* priv
+  私有数据用于结果关联
 
 ## _dump_comm
 
-*内部接口*
+*内部接口* - 转储设备通信数据到通信通道
 
 ### 函数原型
 
@@ -161,12 +227,37 @@ function api:_dump_comm(sn, dir, ...)
 end
 ```
 
+### 参数说明
+
+* sn
+  设备序列号
+* dir
+  方向（send/recv）
+* ...
+  通信数据
+
 ## _fire_event
 
-*内部接口*
+*内部接口* - 触发事件到事件通道
 
 ### 函数原型
 
 ```lua
-api:_fire_event(sn, level, data, timestamp)
+function api:_fire_event(sn, level, type_, info, data, timestamp)
+end
 ```
+
+### 参数说明
+
+* sn
+  设备序列号
+* level
+  事件严重级别（debug, info, warning, error, fatal）
+* type_
+  事件类型字符串
+* info
+  事件描述
+* data
+  可选的事件数据表
+* timestamp
+  可选的事件时间戳（默认当前时间）

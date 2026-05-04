@@ -1,4 +1,5 @@
 
+
 ---
 
 # 应用接口
@@ -13,6 +14,8 @@
 * [统计接口](stat.md)
 * [日志接口](logger.md)
 * [事件类型和等级](event.md)
+* [应用工具函数](util.md)
+* [调试工具](debug.md)
 * [云配置接口](conf_api.md)
 * [云配置帮助接口](conf_helper.md)
 

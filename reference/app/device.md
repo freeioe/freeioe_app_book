@@ -1,4 +1,5 @@
 
+
 ---
 
 # 设备对象接口
@@ -7,7 +8,7 @@
 
 ## mod
 
-修改设备描述项。 参考api:create_device
+修改设备描述项。 参考api:add_device
 
 ### 函数原型
 
@@ -27,7 +28,7 @@ end
 
 ## add
 
-在原有设备描述项基础上增加信息。 参考api:create_device
+在原有设备描述项基础上增加信息。 参考api:add_device
 
 ### 函数原型
 
@@ -38,7 +39,7 @@ end
 
 ## get_input_prop
 
-获取设备输入项的当前值。 
+获取设备输入项的当前值。
 
 ### 函数原型
 
@@ -53,13 +54,16 @@ end
 local value, timestamp, quality = dev:get_input_prop('tag1', 'value')
 ```
 
-
 ### 参数说明
 
 * input
   输入项名称
 * prop
   输入项属性名称
+
+### 返回值
+
+返回属性值、时间戳和质量标识，如果未找到则返回nil
 
 ## set_input_prop
 
@@ -90,6 +94,33 @@ end
 ```lua
 dev:set_input_prop("Temperature", "value", 10)
 ```
+
+### 返回值
+
+成功返回true，失败返回nil和错误消息
+
+## set_input_prop_batch
+
+批量设置设备输入项属性值
+
+> *** API_VER: 4 ***
+
+### 函数原型
+
+```lua
+function device:set_input_prop_batch(...)
+end
+```
+
+### 参数说明
+
+支持两种格式：
+1. 表格式：`{{input, prop, value, timestamp, quality}, ...}`
+2. 数组格式：`{input, prop, value, timestamp, quality}, ...`
+
+### 返回值
+
+成功返回true，失败返回nil和错误消息
 
 ## set_input_prop_emergency
 
@@ -135,6 +166,9 @@ end
 * prop
   属性名称（通常为value)
 
+### 返回值
+
+返回属性值和时间戳
 
 ## set_output_prop
 
@@ -162,6 +196,10 @@ end
 * priv
   输出请求私有数据（用以跟踪执行结果)
 
+### 返回值
+
+成功返回true，失败返回nil和错误消息
+
 ## send_command
 
 发送设备控制指令
@@ -184,11 +222,13 @@ end
 * priv
   指令请求私有数据（用以跟踪执行结果)
 
+### 返回值
+
+成功返回true，失败返回nil和错误消息
+
 ## sn
 
 获取当前设备的序列号。
-
-> *** API_VER: 5 ***
 
 ### 函数原型
 
@@ -196,6 +236,27 @@ end
 function device:sn()
 end
 ```
+
+### 返回值
+
+返回设备序列号字符串
+
+## app_name
+
+获取创建此设备的应用实例名称
+
+> *** API_VER: 4 ***
+
+### 函数原型
+
+```lua
+function device:app_name()
+end
+```
+
+### 返回值
+
+返回应用名称
 
 ## list_props
 
@@ -208,6 +269,10 @@ function device:list_props()
 end
 ```
 
+### 返回值
+
+返回包含设备元数据、输入、输出、命令的表
+
 ## list_inputs
 
 获取设备所有输入项数据
@@ -217,7 +282,7 @@ end
 ### 函数原型
 
 ```lua
-> function device:list_inputs(data_callback)
+function device:list_inputs(data_callback)
 ```
 
 ### 参数说明
@@ -227,16 +292,20 @@ end
 
 ## data
 
-获取设备所有输入项数据，
+获取设备所有输入项数据
 
 > *** API_VER: 4 ***
 
+### 函数原型
+
 ```lua
-function device:data(opt)
+function device:data()
 end
 ```
 
-返回结果是以input name为key的table，值包含: value, timestamp, quality属性
+### 返回值
+
+返回以input name为key的table，值包含: value, timestamp, quality属性
 
 ## cov
 
@@ -247,12 +316,13 @@ end
 ### 函数原型
 
 ```lua
-> function device:cov(opt)
+function device:cov(opt)
 ```
 
 ### 参数说明
 
 * opt
+  COV选项表或nil禁用COV
   * float_threshold: 浮点数据变化最小值，默认为0.000001
   * ttl: 当数据没有变化时，周期发布的时间间隔。 默认不开启
   * min_ttl_gap: 最小ttl检测周期，默认为10，单位是百分之一秒
@@ -266,13 +336,13 @@ end
 ### 函数原型
 
 ```lua
-function device:flush_data(opt)
+function device:flush_data()
 end
 ```
 
 ## dump_comm
 
-记录设备报文。 参考sys:dump_comm
+记录设备报文。 参考api:_dump_comm
 
 ### 函数原型
 
@@ -281,19 +351,40 @@ function device:dump_comm(dir, ...)
 end
 ```
 
+### 参数说明
+
+* dir
+  方向（send/recv）
+* ...
+  通信数据
+
 ## fire_event
 
-记录设备事件。 参考sys:fire_event
+记录设备事件。 参考api:_fire_event
 
 ### 函数原型
 
 ```lua
-> function device:fire_event(level, type, info, data, timestamp)
+function device:fire_event(level, type_, info, data, timestamp)
+end
 ```
+
+### 参数说明
+
+* level
+  事件严重级别
+* type_
+  事件类型字符串
+* info
+  事件描述
+* data
+  可选的事件数据表
+* timestamp
+  可选的事件时间戳
 
 ## stat
 
-获取数据统计对象。参考app:stat
+获取数据统计对象。创建并返回设备统计对象
 
 ### 函数原型
 
@@ -301,6 +392,15 @@ end
 function device:stat(name)
 end
 ```
+
+### 参数说明
+
+* name
+  统计名称（例如：packets_in, bytes_out）
+
+### 返回值
+
+返回统计对象
 
 ## cleanup
 
@@ -315,15 +415,20 @@ end
 
 ## share
 
-### 函数原型
-
 设定设备共享密钥，知晓此密钥的其他应用可以获取设备输入项数据的写入权限。
 
 参考：api:get_device(sn, secret)接口
 
 > *** API_VER: 5 ***
 
+### 函数原型
+
 ```lua
 function device:share(secret)
 end
 ```
+
+### 参数说明
+
+* secret
+  密钥字符串，nil表示禁用共享

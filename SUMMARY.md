@@ -41,6 +41,8 @@
     * [统计接口](reference/app/stat.md)
     * [日志接口](reference/app/logger.md)
     * [事件类型和等级](reference/app/event.md)
+    * [应用工具函数](reference/app/util.md)
+    * [调试工具](reference/app/debug.md)
     * [云配置接口](reference/app/conf_api.md)
     * [云配置帮助接口](reference/app/conf_helper.md)
     * [数据通讯模块](reference/app/port/README.md)

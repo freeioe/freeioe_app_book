@@ -122,20 +122,9 @@ function ioe.starttime()
 end
 ```
 
-### abort_prepare
-
-FreeIOE 系统重启前的准备工作，如关闭所有应用
-
-> *** API_VER: 5 ***
-
-```lua
-function ioe.abort_preapre()
-end
-```
-
 ### abort
 
-FreeIOE系统重启（非操作系统重启)。 自动调用abort_prepare函数。 timeout为等待重启准备工作完成的时间长度，默认为5000, 单位是ms。
+FreeIOE系统重启（非操作系统重启)。 timeout为等待重启准备工作完成的时间长度，默认为5000, 单位是ms。
 
 > *** API_VER: 5 ***
 

@@ -1,20 +1,10 @@
 
+
 ---
 
 # 日志接口
 
-系统日志接口的封装模块。 提供一下函数：
-
-## log
-
-日志接口（内部接口）
-
-### 函数原型
-
-```lua
-function logger:log(level, ...)
-end
-```
+系统日志接口的封装模块。提供以下日志级别方法：trace, debug, info, notice, warning, error, fatal
 
 ## trace
 
@@ -79,5 +69,16 @@ end
 
 ```lua
 function logger:error(...)
+end
+```
+
+## fatal
+
+输出致命错误等级日志
+
+### 函数原型
+
+```lua
+function logger:fatal(...)
 end
 ```
