@@ -74,6 +74,21 @@ function api:devices()
 end
 ```
 
+## config
+
+获取应用配置数据
+
+### 函数原型
+
+```lua
+function api:config()
+end
+```
+
+### 返回值
+
+返回应用配置数据表
+
 ## 完整的代码示例
 
 ``` lua
