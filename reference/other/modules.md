@@ -40,7 +40,7 @@
 | [Lua-cURL/Lua-cURLv3](https://github.com/Lua-cURL/Lua-cURLv3) | libCURL 模块 |
 | [keplerproject/lfs](http://keplerproject.github.io/luafilesystem/) | Lua 文件系统接口模块 |
 | [keplerproject/md5](https://github.com/keplerproject/md5) | MD5 计算模块 |
-| [user-none/lua-hashings](https://github.com/user-none/lua-hashings) | 哈希模块(sha1,sha256,sha512,md5,crc32等等) |
+| [hashings](../hashings/) | 哈希模块集合(MD5,SHA-1,SHA-256,SHA-512,CRC32,HMAC,PBKDF2等) |
 | [user-none/nums](https://github.com/user-none/lua-nums) | Lua超大整数，无符号整数支持 |
 | [srdgame/librs232](https://github.com/srdgame/librs232) | 串口接口使用模块 |
 | [lpeg](http://www.inf.puc-rio.br/~roberto/lpeg/) | Parsing Expression Grammars For Lua |
