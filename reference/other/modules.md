@@ -10,6 +10,8 @@
 | ioe | FreeIOE设备信息获取、设定 |
 | [serialdriver](serialdriver.md) | 串口模块librs232轻度封装模块 |
 | [summation](summation.md) | 累计计数模块(适用于网络使用量计算，涉及重启基数归零后的重置计算等等) |
+| [cov](cov.md) | 变化上报模块(COV)，支持数据变化检测和周期性强制上报 |
+| [buffer](buffer/) | 缓冲区模块集合 |
 | ubus/ubox | ubus消息解析模块 |
 | http.restful | RestFul API模块(使用skynet http模块实现) |
 | http.download | HTTP 下载模块(使用skynet http模块实现) |
