@@ -52,11 +52,11 @@ end
 # 成员对象
 
 * \_sys
-  自 FreeIOE 构造应用势力传入的接口对象
+  自 FreeIOE 构造应用实例传入的接口对象
 * \_name
-  自 FreeIOE 构造应用势力传入的应用示例名称
+  自 FreeIOE 构造应用实例传入的应用示例名称
 * \_conf
-  自 FreeIOE 构造应用势力传入的应用配置数据对象
+  自 FreeIOE 构造应用实例传入的应用配置数据对象
 * \_api
   FreeIOE 系统数据接口，由 ``` sys:data_api ``` 生成而来
 * \_log
