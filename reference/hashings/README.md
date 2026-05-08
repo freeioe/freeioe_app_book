@@ -20,6 +20,7 @@
 | [blake2s](blake2s.md) | 可变 | BLAKE2s哈希算法（32位优化） |
 | [ripemd160](ripemd160.md) | 160位 | RIPEMD-160哈希算法 |
 | [whirlpool](whirlpool.md) | 512位 | Whirlpool哈希算法 |
+| [keccak](keccak.md) | 可变 | Keccak哈希算法（SHA-3基础） |
 
 ### 校验和算法
 
